@@ -3,24 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VocaHQ — Offline voice dictation for every machine you own</title>
-  <meta name="description" content="VocaHQ builds free, open-source, 100% offline voice dictation for Linux, macOS, Windows, and phone. Same privacy-first idea on every platform." />
-  <meta name="theme-color" content="#07101c" />
+  <!--
+    THESIS: Your voice is a local signal that follows you across machines. This page is a desk instrument, not a SaaS template of equal cards.
+    OWN-WORLD: Graphite-teal desk; teal waveform ink; channel-strip projects; Epilogue + Atkinson Hyperlegible; LED status, not badge soup.
+    STORY: Visitor learns Voca is offline dictation on every platform, picks their machine, trusts free/open local engines.
+    FIRST VIEWPORT: Large headline left, live waveform instrument right, primary CTA "Find your platform".
+    FORM: Local signal desk (grounded #7) + machine constellation/channel strip (surface #3); seeds 7b54a76c / c3463c11.
+  -->
+  <title>VocaHQ · Offline voice dictation for every machine you own</title>
+  <meta name="description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Hold a hotkey, speak, and text appears at your cursor. Audio stays on your device." />
+  <meta name="theme-color" content="#0a1412" />
   <link rel="canonical" href="https://vocahq.com/" />
   <link rel="icon" type="image/png" href="assets/logo.png" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vocahq.com/" />
-  <meta property="og:title" content="VocaHQ — Offline voice dictation everywhere" />
-  <meta property="og:description" content="Free, open-source voice-to-text for Linux, macOS, Windows, and phone. 100% offline. Forever." />
+  <meta property="og:title" content="VocaHQ · Offline voice dictation for every machine you own" />
+  <meta property="og:description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Audio stays on your device." />
   <meta property="og:image" content="https://vocahq.com/assets/logo.png" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="VocaHQ — Offline voice dictation everywhere" />
-  <meta name="twitter:description" content="Free, open-source voice-to-text for Linux, macOS, Windows, and phone. 100% offline. Forever." />
+  <meta name="twitter:title" content="VocaHQ · Offline voice dictation for every machine you own" />
+  <meta name="twitter:description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Audio stays on your device." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Epilogue:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,19 +35,19 @@
 
   <header class="site-header" data-header>
     <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="VocaHQ home">
+      <a class="brand" href="#top">
         <img src="assets/logo.png" width="36" height="36" alt="" />
         <span>VocaHQ</span>
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="#projects">Projects</a>
+        <a href="#apps">Apps</a>
         <a href="#principles">Principles</a>
-        <a href="#roadmap">Roadmap</a>
+        <a href="#plans">Plans</a>
         <a href="#involve">Contribute</a>
       </nav>
       <div class="header-actions">
         <a class="btn btn-ghost" href="https://github.com/VocaHQ" rel="noopener noreferrer">GitHub</a>
-        <a class="btn btn-primary" href="#projects">Pick a platform</a>
+        <a class="btn btn-primary" href="#apps">Find your platform</a>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
         <span class="sr-only">Menu</span>
@@ -48,9 +55,9 @@
       </button>
     </div>
     <nav id="mobile-nav" class="mobile-nav" hidden data-mobile-nav>
-      <a href="#projects">Projects</a>
+      <a href="#apps">Apps</a>
       <a href="#principles">Principles</a>
-      <a href="#roadmap">Roadmap</a>
+      <a href="#plans">Plans</a>
       <a href="#involve">Contribute</a>
       <a href="https://github.com/VocaHQ" rel="noopener noreferrer">GitHub org</a>
     </nav>
@@ -58,236 +65,301 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="hero-glow" aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="kicker">The Voca family · free &amp; open source</p>
-          <h1>Offline voice dictation across the machines you actually use.</h1>
+          <h1>Speak into any machine. Keep the audio home.</h1>
           <p class="lede">
-            Hold a hotkey. Speak. Text appears where your cursor is.
-            Linux, macOS, Windows, and phone — same privacy-first idea on every platform.
-            No cloud. No accounts. No subscriptions.
+            Voca is free, open source voice typing for Linux, Mac, Windows, and phone.
+            Hold a hotkey, talk, and the words land where your cursor is.
+            Models run on your hardware. Nothing goes to a cloud account you never wanted.
           </p>
           <div class="hero-cta">
-            <a class="btn btn-primary btn-lg" href="#projects">Explore the projects</a>
-            <a class="btn btn-ghost btn-lg" href="https://github.com/VocaHQ" rel="noopener noreferrer">View on GitHub</a>
+            <a class="btn btn-primary btn-lg" href="#apps">Find your platform</a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/VocaHQ" rel="noopener noreferrer">Browse the org</a>
           </div>
-          <ul class="hero-proof" aria-label="Highlights">
-            <li><strong>100%</strong> offline by default</li>
-            <li><strong>4</strong> platforms in flight</li>
-            <li><strong>AGPL / GPL</strong> forever free</li>
-          </ul>
+          <p class="hero-note">
+            Shared home for the Voca family under
+            <a href="https://github.com/VocaHQ" rel="noopener noreferrer">github.com/VocaHQ</a>.
+            Site consolidating on <strong>vocahq.com</strong>.
+          </p>
         </div>
-        <aside class="hero-panel" aria-label="Product snapshot">
-          <div class="panel-card">
-            <div class="panel-top">
-              <img src="assets/logo.png" width="48" height="48" alt="" />
-              <div>
-                <p class="panel-label">VocaHQ</p>
-                <p class="panel-status"><span class="dot"></span> Local engines ready</p>
+
+        <aside class="instrument" aria-label="Local signal monitor">
+          <div class="instrument-face">
+            <div class="instrument-head">
+              <div class="instrument-id">
+                <img src="assets/logo.png" width="40" height="40" alt="" />
+                <div>
+                  <p class="instrument-name">Local signal</p>
+                  <p class="instrument-state"><span class="led led-live" aria-hidden="true"></span> On-device · no uplink</p>
+                </div>
               </div>
+              <p class="instrument-meta">ch&nbsp;mic · buffer discarded after decode</p>
             </div>
-            <ol class="panel-steps">
-              <li><span>1</span> Hold your hotkey</li>
-              <li><span>2</span> Speak naturally</li>
-              <li><span>3</span> Text lands at the cursor</li>
+
+            <svg class="wave" viewBox="0 0 360 88" role="img" aria-label="Animated voice waveform">
+              <defs>
+                <linearGradient id="waveFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5eecc8" stop-opacity="0.35" />
+                  <stop offset="100%" stop-color="#2ec4a0" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <path class="wave-fill" d="" fill="url(#waveFill)" data-wave-fill></path>
+              <path class="wave-line" d="" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" data-wave-line></path>
+            </svg>
+
+            <ol class="signal-path">
+              <li><span>Hotkey</span></li>
+              <li><span>Local model</span></li>
+              <li><span>Cursor</span></li>
             </ol>
-            <p class="panel-foot">Audio never leaves the device. Models run on-device.</p>
-          </div>
-          <div class="wave" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section strip" aria-label="At a glance">
-      <div class="shell strip-grid">
-        <p><strong>Set Voca up once.</strong> Use it across whatever machines you own — desktop, phone, headless or interactive, mixed platforms.</p>
-        <p><strong>Feature parity over time.</strong> A shared org so Linux, Mac, Windows, and mobile stay aligned on privacy and feel.</p>
-        <p><strong>Built in public.</strong> Stars, issues, and releases live under <a href="https://github.com/VocaHQ">github.com/VocaHQ</a>.</p>
+    <section class="band">
+      <div class="shell band-grid">
+        <p>Set Voca up once. Use it on the machines you already own: desktop, phone, headless or interactive, mixed platforms.</p>
+        <p>We care more about feature parity over time than shipping five half-related products with the same logo.</p>
+        <p>Stars, issues, PRs, and releases live under the org. Old personal-repo links redirect here.</p>
       </div>
     </section>
 
-    <section class="section" id="projects">
+    <section class="section" id="apps">
       <div class="shell">
-        <div class="section-head">
-          <h2>Projects</h2>
-          <p>One idea, native apps per platform. Pick the machine you use day to day.</p>
-        </div>
+        <header class="section-head">
+          <h2>The Voca apps</h2>
+          <p>One idea, native apps per platform. Start with the machine you use every day.</p>
+        </header>
 
-        <div class="project-grid">
-          <article class="project project-featured">
-            <div class="project-meta">
-              <span class="platform">Linux</span>
-              <span class="badge badge-stable">Stable</span>
+        <div class="channel-strip" role="list">
+          <article class="channel channel-live" role="listitem">
+            <div class="channel-rail">
+              <span class="led led-stable" title="Stable"></span>
+              <span class="channel-num">01</span>
             </div>
-            <h3>VocaLinux</h3>
-            <p>System-wide offline dictation for real Linux desktops. whisper.cpp by default, Whisper &amp; VOSK options, Vulkan GPU acceleration, X11 and Wayland.</p>
-            <ul class="tags">
-              <li>Python</li>
-              <li>whisper.cpp</li>
-              <li>X11 · Wayland</li>
-              <li>724★</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn btn-primary" href="https://vocalinux.com" rel="noopener noreferrer">vocalinux.com</a>
-              <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocalinux" rel="noopener noreferrer">GitHub</a>
+            <div class="channel-body">
+              <div class="channel-top">
+                <p class="channel-platform">Linux</p>
+                <p class="channel-status status-stable">Stable</p>
+              </div>
+              <h3>VocaLinux</h3>
+              <p>
+                System-wide offline dictation for real Linux desktops.
+                whisper.cpp by default, Whisper and VOSK as options, Vulkan GPU acceleration, X11 and Wayland.
+              </p>
+              <ul class="chip-row">
+                <li>Python</li>
+                <li>whisper.cpp</li>
+                <li>X11 · Wayland</li>
+                <li>724★</li>
+              </ul>
+              <div class="channel-actions">
+                <a class="btn btn-primary" href="https://vocalinux.com" rel="noopener noreferrer">vocalinux.com</a>
+                <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocalinux" rel="noopener noreferrer">GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project">
-            <div class="project-meta">
-              <span class="platform">macOS</span>
-              <span class="badge badge-beta">Beta</span>
+          <article class="channel" role="listitem">
+            <div class="channel-rail">
+              <span class="led led-beta" title="Beta"></span>
+              <span class="channel-num">02</span>
             </div>
-            <h3>VocaMac</h3>
-            <p>Native menu-bar app. Hold a hotkey, speak, text appears. WhisperKit + CoreML on Apple Silicon. 100% private, install via Homebrew or DMG.</p>
-            <ul class="tags">
-              <li>Swift</li>
-              <li>WhisperKit</li>
-              <li>Apple Silicon</li>
-              <li>75★</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn btn-primary" href="https://vocamac.com" rel="noopener noreferrer">vocamac.com</a>
-              <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocamac" rel="noopener noreferrer">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project">
-            <div class="project-meta">
-              <span class="platform">Windows</span>
-              <span class="badge badge-soon">Coming soon</span>
-            </div>
-            <h3>VocaWin</h3>
-            <p>Windows tray app with the same offline-first design. System-wide injection, GPU acceleration, no cloud dependency. Actively planned.</p>
-            <ul class="tags">
-              <li>Offline-first</li>
-              <li>System tray</li>
-              <li>GPU planned</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn btn-primary" href="https://vocawin.com" rel="noopener noreferrer">vocawin.com</a>
-              <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer">GitHub</a>
+            <div class="channel-body">
+              <div class="channel-top">
+                <p class="channel-platform">macOS</p>
+                <p class="channel-status status-beta">Beta</p>
+              </div>
+              <h3>VocaMac</h3>
+              <p>
+                Native menu bar app. Hold a hotkey, speak, text appears.
+                WhisperKit and CoreML on Apple Silicon. Install with Homebrew or a DMG.
+              </p>
+              <ul class="chip-row">
+                <li>Swift</li>
+                <li>WhisperKit</li>
+                <li>Apple Silicon</li>
+                <li>75★</li>
+              </ul>
+              <div class="channel-actions">
+                <a class="btn btn-primary" href="https://vocamac.com" rel="noopener noreferrer">vocamac.com</a>
+                <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocamac" rel="noopener noreferrer">GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project">
-            <div class="project-meta">
-              <span class="platform">iOS · Android</span>
-              <span class="badge badge-dev">In development</span>
+          <article class="channel" role="listitem">
+            <div class="channel-rail">
+              <span class="led led-soon" title="Coming soon"></span>
+              <span class="channel-num">03</span>
             </div>
-            <h3>vocaphone</h3>
-            <p>Open-source, offline voice-to-text for phone. Speak, text appears. Same privacy bar as the desktop apps.</p>
-            <ul class="tags">
-              <li>Mobile</li>
-              <li>On-device STT</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer">GitHub</a>
+            <div class="channel-body">
+              <div class="channel-top">
+                <p class="channel-platform">Windows</p>
+                <p class="channel-status status-soon">Coming soon</p>
+              </div>
+              <h3>VocaWin</h3>
+              <p>
+                Windows tray app with the same offline-first design.
+                System-wide injection and GPU acceleration are planned. No cloud dependency.
+              </p>
+              <ul class="chip-row">
+                <li>Offline-first</li>
+                <li>System tray</li>
+                <li>GPU planned</li>
+              </ul>
+              <div class="channel-actions">
+                <a class="btn btn-primary" href="https://vocawin.com" rel="noopener noreferrer">vocawin.com</a>
+                <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer">GitHub</a>
+              </div>
             </div>
           </article>
 
-          <article class="project">
-            <div class="project-meta">
-              <span class="platform">Server</span>
-              <span class="badge badge-dev">Early</span>
+          <article class="channel" role="listitem">
+            <div class="channel-rail">
+              <span class="led led-dev" title="In development"></span>
+              <span class="channel-num">04</span>
             </div>
-            <h3>vocaserver</h3>
-            <p>Headless Voca server — set up once, run everywhere. For people who want one trusted local (or self-hosted) engine feeding multiple clients.</p>
-            <ul class="tags">
-              <li>Headless</li>
-              <li>Set up once</li>
-            </ul>
-            <div class="project-links">
-              <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocaserver" rel="noopener noreferrer">GitHub</a>
+            <div class="channel-body">
+              <div class="channel-top">
+                <p class="channel-platform">iOS · Android</p>
+                <p class="channel-status status-dev">In development</p>
+              </div>
+              <h3>vocaphone</h3>
+              <p>
+                Offline voice-to-text for phone. Speak, text appears.
+                Same privacy bar as the desktop apps. Still early.
+              </p>
+              <ul class="chip-row">
+                <li>Mobile</li>
+                <li>On-device STT</li>
+              </ul>
+              <div class="channel-actions">
+                <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="channel" role="listitem">
+            <div class="channel-rail">
+              <span class="led led-dev" title="Early"></span>
+              <span class="channel-num">05</span>
+            </div>
+            <div class="channel-body">
+              <div class="channel-top">
+                <p class="channel-platform">Server</p>
+                <p class="channel-status status-dev">Early</p>
+              </div>
+              <h3>vocaserver</h3>
+              <p>
+                Headless Voca server: set up once, run everywhere.
+                For people who want one trusted local (or self-hosted) engine feeding several clients.
+              </p>
+              <ul class="chip-row">
+                <li>Headless</li>
+                <li>Set up once</li>
+              </ul>
+              <div class="channel-actions">
+                <a class="btn btn-ghost" href="https://github.com/VocaHQ/vocaserver" rel="noopener noreferrer">GitHub</a>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="principles">
+    <section class="section section-tone" id="principles">
       <div class="shell">
-        <div class="section-head">
-          <h2>What stays the same</h2>
-          <p>Platforms differ. The contract does not.</p>
-        </div>
-        <div class="principles">
+        <header class="section-head">
+          <h2>What does not change</h2>
+          <p>Platforms differ. The deal does not.</p>
+        </header>
+        <div class="principle-strip">
           <article>
             <h3>Free, forever</h3>
-            <p>No premium tiers, no accounts, no “freemium later.” Same open licenses you can audit and ship with.</p>
+            <p>No premium tiers, no accounts, no "free until we add a wall." Same open licenses you can read and ship with.</p>
           </article>
           <article>
-            <h3>Privacy / offline focus</h3>
-            <p>Local engines process audio on-device. No telemetry, no usage analytics, no “phone home” for dictation.</p>
+            <h3>Offline first</h3>
+            <p>Local engines process audio on the device. No usage telemetry for dictation. Remote servers are optional and only ones you configure.</p>
           </article>
           <article>
             <h3>Works where you type</h3>
-            <p>System-wide injection into the focused field — browsers, IDEs, chat, terminals, office apps — not locked to one editor.</p>
+            <p>Text goes into the focused field: browsers, IDEs, chat, terminals, office apps. Not locked to one editor.</p>
           </article>
           <article>
             <h3>Built in the open</h3>
-            <p>Maintained publicly under VocaHQ. Issues and PRs welcome on each project. Maintainer: <a href="https://github.com/jatinkrmalik">@jatinkrmalik</a>.</p>
+            <p>Public under VocaHQ. Issues and PRs welcome on each project. Maintainer: <a href="https://github.com/jatinkrmalik" rel="noopener noreferrer">@jatinkrmalik</a>.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="roadmap">
-      <div class="shell roadmap-layout">
-        <div class="section-head">
-          <h2>Where we’re headed</h2>
+    <section class="section" id="plans">
+      <div class="shell plans-layout">
+        <header class="section-head">
+          <h2>Where this is going</h2>
           <p>
-            Longer term: set Voca up once and use it across whatever you own.
-            Desktop plus phone, headless or interactive, mixed platforms — with real feature parity, not a different product every OS.
+            Longer term we want one setup that covers whatever you own:
+            desktop plus phone, headless or interactive, mixed platforms.
+            Real feature parity, not a different product on every OS.
           </p>
-        </div>
-        <ol class="roadmap">
+        </header>
+        <ol class="plan-path">
           <li>
-            <div class="road-status done">Now</div>
+            <p class="plan-when plan-now">Now</p>
             <div>
               <h3>Desktop depth</h3>
-              <p>VocaLinux stable and shipping hard; VocaMac in beta with Homebrew and native Apple Silicon path. Harden reliability, engines, and install experience.</p>
+              <p>
+                VocaLinux is stable and still shipping hard. VocaMac is in beta with Homebrew and a native Apple Silicon path.
+                We keep hardening reliability, engines, and install paths.
+              </p>
             </div>
           </li>
           <li>
-            <div class="road-status active">Next</div>
+            <p class="plan-when plan-next">Next</p>
             <div>
-              <h3>Windows + phone</h3>
-              <p>VocaWin moves from “coming soon” to usable offline dictation. vocaphone brings the same privacy bar to iOS and Android.</p>
+              <h3>Windows and phone</h3>
+              <p>
+                VocaWin moves from "coming soon" to something you can actually dictate with.
+                vocaphone brings the same offline bar to iOS and Android.
+              </p>
             </div>
           </li>
           <li>
-            <div class="road-status">Later</div>
+            <p class="plan-when">Later</p>
             <div>
               <h3>One setup, many clients</h3>
-              <p>vocaserver and shared patterns so a single trusted engine can feed the machines you already run. Consolidate project sites on vocahq.com over time.</p>
+              <p>
+                vocaserver and shared patterns so a single trusted engine can feed the machines you already run.
+                Project sites consolidate on vocahq.com over time.
+              </p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <section class="section section-cta" id="involve">
-      <div class="shell cta-panel">
-        <div>
+    <section class="section" id="involve">
+      <div class="shell close-panel">
+        <div class="close-copy">
           <h2>Get involved</h2>
           <p>
-            Issues and PRs are welcome on every project. Start with the platform you use day to day —
-            that’s usually where the best feedback lives.
+            Issues and PRs are welcome on every project.
+            The platform you use day to day is usually the best place to start.
           </p>
-          <ul class="cta-list">
-            <li><a href="https://github.com/VocaHQ">Browse the org</a></li>
-            <li><a href="https://github.com/VocaHQ/vocalinux">Star or contribute to VocaLinux</a></li>
-            <li><a href="https://github.com/VocaHQ/vocamac">Try VocaMac on macOS</a></li>
+          <ul class="close-links">
+            <li><a href="https://github.com/VocaHQ" rel="noopener noreferrer">Browse the org</a></li>
+            <li><a href="https://github.com/VocaHQ/vocalinux" rel="noopener noreferrer">Star or contribute to VocaLinux</a></li>
+            <li><a href="https://github.com/VocaHQ/vocamac" rel="noopener noreferrer">Try VocaMac on macOS</a></li>
             <li><a href="mailto:hello@vocahq.com">hello@vocahq.com</a></li>
           </ul>
         </div>
-        <div class="cta-aside">
-          <p class="cta-quote">Building this for the last 15 months has been an absolute joy.</p>
-          <p class="cta-sign">To infinity and beyond.</p>
+        <div class="close-aside">
+          <p class="close-quote">Building this for the last 15 months has been an absolute joy.</p>
+          <p class="close-sign">To infinity and beyond.</p>
           <a class="btn btn-primary btn-lg" href="https://github.com/VocaHQ" rel="noopener noreferrer">Open VocaHQ on GitHub</a>
         </div>
       </div>
@@ -295,7 +367,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="shell footer-inner">
+    <div class="shell footer-grid">
       <div class="footer-brand">
         <img src="assets/logo.png" width="32" height="32" alt="" />
         <div>
@@ -303,21 +375,19 @@
           <p>Offline voice dictation for every machine you own.</p>
         </div>
       </div>
-      <div class="footer-cols">
-        <div>
-          <h3>Projects</h3>
-          <a href="https://vocalinux.com" rel="noopener noreferrer">VocaLinux</a>
-          <a href="https://vocamac.com" rel="noopener noreferrer">VocaMac</a>
-          <a href="https://vocawin.com" rel="noopener noreferrer">VocaWin</a>
-          <a href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer">vocaphone</a>
-          <a href="https://github.com/VocaHQ/vocaserver" rel="noopener noreferrer">vocaserver</a>
-        </div>
-        <div>
-          <h3>Org</h3>
-          <a href="https://github.com/VocaHQ" rel="noopener noreferrer">GitHub</a>
-          <a href="mailto:hello@vocahq.com">Contact</a>
-          <a href="https://github.com/VocaHQ/vocahq" rel="noopener noreferrer">This site</a>
-        </div>
+      <div class="footer-col">
+        <h3>Projects</h3>
+        <a href="https://vocalinux.com" rel="noopener noreferrer">VocaLinux</a>
+        <a href="https://vocamac.com" rel="noopener noreferrer">VocaMac</a>
+        <a href="https://vocawin.com" rel="noopener noreferrer">VocaWin</a>
+        <a href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer">vocaphone</a>
+        <a href="https://github.com/VocaHQ/vocaserver" rel="noopener noreferrer">vocaserver</a>
+      </div>
+      <div class="footer-col">
+        <h3>Org</h3>
+        <a href="https://github.com/VocaHQ" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@vocahq.com">Contact</a>
+        <a href="https://github.com/VocaHQ/vocahq" rel="noopener noreferrer">This site</a>
       </div>
     </div>
     <div class="shell footer-bottom">

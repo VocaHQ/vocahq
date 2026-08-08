@@ -6,6 +6,7 @@ colors:
   ink-muted: "#9ec4b8"
   ink-faint: "#6f9489"
   desk: "#0a1412"
+  desk-deep: "#060c0b"
   desk-raised: "#12201c"
   desk-panel: "#173028"
   teal: "#2ec4a0"
@@ -18,30 +19,76 @@ colors:
 typography:
   display:
     fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(2.4rem, 6vw, 4.25rem)"
+    fontSize: "clamp(2.35rem, 6vw, 4.1rem)"
     fontWeight: 700
     lineHeight: 1.05
     letterSpacing: "-0.03em"
   headline:
     fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(1.6rem, 3vw, 2.2rem)"
-    fontWeight: 650
-    lineHeight: 1.15
+    fontSize: "clamp(1.7rem, 3.2vw, 2.25rem)"
+    fontWeight: 700
+    lineHeight: 1.12
+    letterSpacing: "-0.025em"
+  title:
+    fontFamily: "Epilogue, system-ui, sans-serif"
+    fontSize: "1.35rem"
+    fontWeight: 700
     letterSpacing: "-0.02em"
+  title-sm:
+    fontFamily: "Epilogue, system-ui, sans-serif"
+    fontSize: "1.12rem"
+    fontWeight: 700
+  quote:
+    fontFamily: "Epilogue, system-ui, sans-serif"
+    fontSize: "1.3rem"
+    fontWeight: 700
   body:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.65
+  body-lg:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "1.12rem"
+    fontWeight: 400
+  body-sm:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.98rem"
+    fontWeight: 400
+  ui:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.95rem"
+    fontWeight: 700
+  meta:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.9rem"
+    fontWeight: 700
+  footer:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.92rem"
+    fontWeight: 400
+  fine:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.88rem"
+    fontWeight: 400
   label:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.8125rem"
+    fontSize: "0.78rem"
     fontWeight: 700
     letterSpacing: "0.04em"
+  micro:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 700
+  channel-num:
+    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
+    fontSize: "0.72rem"
+    fontWeight: 700
 rounded:
   sm: "6px"
   md: "12px"
   lg: "18px"
+  lg-plus: "20px"
   pill: "999px"
 spacing:
   sm: "8px"

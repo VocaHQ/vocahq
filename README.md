@@ -1,28 +1,38 @@
 # VocaHQ
 
-Landing page, shared assets, and org-level material for **[vocahq.com](https://vocahq.com)**.
+Landing page and shared assets for [vocahq.com](https://vocahq.com).
 
-VocaHQ is the shared home for the Voca family: free, open-source, offline voice dictation for Linux, macOS, Windows, and phone.
+VocaHQ is the shared home for free, open source, offline voice dictation on Linux, macOS, Windows, and phone.
+
+## Design context
+
+This site follows [Impeccable](https://github.com/pbakaus/impeccable) project context:
+
+- `PRODUCT.md` — product truth
+- `DESIGN.md` — local signal desk visual system
+
+Install design tooling in this repo with:
+
+```bash
+npx impeccable install --providers=grok --scope=project
+```
 
 ## Local preview
 
+From this directory (or the `vocahq-landing` worktree):
+
 ```bash
 python3 -m http.server 8080
-# open http://localhost:8080
+# open http://127.0.0.1:8080
 ```
-
-Or any static file server from the repo root.
 
 ## GitHub Pages
 
-This site is static HTML/CSS/JS at the repo root, intended for GitHub Pages on **vocahq.com**.
+Static HTML/CSS/JS at the repo root, custom domain `vocahq.com` (`CNAME` included).
 
-1. In the repo: **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `landing-page` (or `main` once merged), folder `/ (root)`
-4. Custom domain: `vocahq.com` (the `CNAME` file is already in the repo)
-
-DNS at your registrar should point to GitHub Pages (A/AAAA or CNAME per [GitHub’s docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)).
+1. **Settings → Pages**
+2. Deploy from branch (`landing-page` while iterating, or `main` once merged), folder `/ (root)`
+3. Custom domain: `vocahq.com`
 
 ## Projects
 
@@ -40,4 +50,4 @@ DNS at your registrar should point to GitHub Pages (A/AAAA or CNAME per [GitHub�
 
 ## License
 
-Site and shared materials in this repo: see [LICENSE](LICENSE) (AGPL-3.0). Individual product repos may use AGPL or GPL as noted in each project.
+See [LICENSE](LICENSE) (AGPL-3.0). Individual product repos may use AGPL or GPL as noted in each project.
