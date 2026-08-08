@@ -37,9 +37,12 @@ jobs:
           test -f web/script.js
           test -f web/CNAME
           test -f web/assets/brand/vocaphone/vocaphone-logo.svg
+          test -f web/assets/brand/vocaphone/vocaphone-logo-512.png
+          test -f web/assets/brand/vocaphone/vocaphone-play-store-512.png
           test -f web/assets/icons/linux.svg
           # Relative asset refs used by the page must resolve under web/
           grep -q 'assets/brand/vocaphone/vocaphone-play-store-512.png' web/index.html
+          grep -q 'assets/brand/vocaphone/vocaphone-logo-512.png' web/index.html
           grep -q 'assets/icons/' web/index.html
           echo "web/ looks deployable"
 
