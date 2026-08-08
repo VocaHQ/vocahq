@@ -10,13 +10,15 @@
   --accent: #1f8f75;
   --accent-hover: #176b58;
   --accent-soft: #e6f4ef;
-  --shell: 720px;
-  --shell-wide: 880px;
+  --shell: 880px;
   --font: "Atkinson Hyperlegible", system-ui, sans-serif;
   --display: "Epilogue", system-ui, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --radius: 8px;
   --radius-pill: 999px;
+  --section-y: 4rem;
+  --section-y-hero-top: 4.5rem;
+  --section-y-hero-bottom: 4rem;
 }
 
 *,
@@ -88,12 +90,8 @@ a:hover {
 }
 
 .shell {
-  width: min(100% - 2.5rem, var(--shell-wide));
-  margin-inline: auto;
-}
-
-.shell.narrow {
   width: min(100% - 2.5rem, var(--shell));
+  margin-inline: auto;
 }
 
 /* Header */
@@ -247,23 +245,24 @@ a:hover {
 
 /* Hero */
 .hero {
-  padding: 4.5rem 0 3.5rem;
+  padding: var(--section-y-hero-top) 0 var(--section-y-hero-bottom);
 }
 
 .hero h1 {
   margin: 0;
-  max-width: 14ch;
+  max-width: 20ch;
   font-family: var(--display);
   font-size: clamp(2.15rem, 5.5vw, 3.25rem);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .lede {
   margin: 1.25rem 0 0;
-  max-width: 38rem;
+  max-width: none;
   color: var(--ink-muted);
   font-size: 1.12rem;
   line-height: 1.65;
@@ -276,9 +275,9 @@ a:hover {
   margin-top: 1.75rem;
 }
 
-/* Sections */
+/* Sections — shared vertical rhythm */
 .section {
-  padding: 3.5rem 0;
+  padding: var(--section-y) 0;
 }
 
 .section-soft {
@@ -288,7 +287,7 @@ a:hover {
 
 .section-head {
   margin-bottom: 1.75rem;
-  max-width: 36rem;
+  max-width: none;
 }
 
 .section-head h2 {
@@ -302,6 +301,7 @@ a:hover {
 
 .section-head p {
   margin: 0.55rem 0 0;
+  max-width: none;
   color: var(--ink-muted);
 }
 
@@ -387,7 +387,6 @@ a:hover {
 .app-main p {
   margin: 0;
   color: var(--ink-muted);
-  max-width: 58ch;
 }
 
 .app-tags {
@@ -432,7 +431,6 @@ a:hover {
 .principles article p {
   margin: 0;
   color: var(--ink-muted);
-  max-width: 48ch;
 }
 
 /* Plans */
@@ -469,7 +467,7 @@ a:hover {
   color: var(--ink-muted);
 }
 
-/* Close */
+/* Close / get involved */
 .close h2 {
   margin: 0;
   font-family: var(--display);
@@ -479,59 +477,18 @@ a:hover {
 }
 
 .close > p {
-  margin: 0.65rem 0 0;
+  margin: 0.75rem 0 0;
   color: var(--ink-muted);
-  max-width: 40ch;
+  max-width: none;
 }
 
-.link-list {
-  margin: 1.25rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: grid;
-  gap: 0.45rem;
-}
-
-.link-list a {
-  font-weight: 700;
-  color: var(--ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--line-strong);
-  width: fit-content;
-}
-
-.link-list a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
-}
-
-.close blockquote {
-  margin: 2rem 0 1.5rem;
-  padding: 0;
-  border: 0;
-}
-
-.close blockquote p {
-  margin: 0;
-  font-family: var(--display);
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.close blockquote footer {
-  margin-top: 0.45rem;
-  font-size: 0.95rem;
-  color: var(--ink-faint);
-  font-style: italic;
+.close .btn {
+  margin-top: 1.5rem;
 }
 
 /* Footer */
 .site-footer {
-  margin-top: 1rem;
-  padding: 2.25rem 0 2rem;
+  padding: var(--section-y) 0 2rem;
   border-top: 1px solid var(--line);
 }
 
@@ -604,7 +561,8 @@ a:hover {
   }
 
   .hero {
-    padding: 5.5rem 0 4.25rem;
+    --section-y-hero-top: 5.5rem;
+    --section-y-hero-bottom: 4.5rem;
   }
 
   .app {
