@@ -40,7 +40,13 @@
     // Close mobile menu when crossing into the desktop nav layout (720px).
     const desktopNav = window.matchMedia("(min-width: 720px)");
     const closeOnDesktop = (event) => {
-      if (event.matches) setOpen(false);
+      if (!event.matches) return;
+      const wasOpen = toggle.getAttribute("aria-expanded") === "true";
+      setOpen(false);
+      // Escape restores focus; resize should not leave focus on a now-hidden drawer link.
+      if (wasOpen && mobileNav.contains(document.activeElement)) {
+        toggle.focus();
+      }
     };
     if (typeof desktopNav.addEventListener === "function") {
       desktopNav.addEventListener("change", closeOnDesktop);

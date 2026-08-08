@@ -42,13 +42,18 @@ python3 -m http.server 8080
 
 ## GitHub Pages
 
-The site is the `web/` folder, deployed with `.github/workflows/pages.yml`.
+The site is the `web/` folder. CI behavior:
+
+- **Pull requests:** `verify` job only (file/path checks; no deploy)
+- **Push to `main`:** `verify` then deploy to GitHub Pages
+
+Workflow: `.github/workflows/pages.yml`.
 
 1. **Settings → Pages**
 2. Source: **GitHub Actions**
 3. Custom domain: `vocahq.com` (`web/CNAME` is included)
 
-On first merge, run the workflow if it does not start automatically, then confirm DNS for the custom domain.
+After the first merge to `main`, confirm the deploy job succeeds and DNS for the custom domain.
 
 ## Ecosystem
 

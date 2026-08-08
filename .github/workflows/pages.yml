@@ -1,8 +1,12 @@
-name: Deploy site
+name: Site
 
 on:
   push:
-    branches: [main, landing-page]
+    branches: [main]
+    paths:
+      - "web/**"
+      - ".github/workflows/pages.yml"
+  pull_request:
     paths:
       - "web/**"
       - ".github/workflows/pages.yml"
@@ -14,11 +18,35 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: pages-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
+  # PRs (and main) validate the static site without publishing.
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check site files
+        run: |
+          set -euo pipefail
+          test -f web/index.html
+          test -f web/styles.css
+          test -f web/script.js
+          test -f web/CNAME
+          test -f web/assets/brand/vocaphone/vocaphone-logo.svg
+          test -f web/assets/icons/linux.svg
+          # Relative asset refs used by the page must resolve under web/
+          grep -q 'assets/brand/vocaphone/vocaphone-play-store-512.png' web/index.html
+          grep -q 'assets/icons/' web/index.html
+          echo "web/ looks deployable"
+
+  # Only publish after merge to main (or manual dispatch on main).
   deploy:
+    needs: verify
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -27,12 +55,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Repo Settings → Pages must use "GitHub Actions" as the source (once).
-      # enablement: true attempts to turn Pages on if it is not already enabled.
       - name: Configure Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
