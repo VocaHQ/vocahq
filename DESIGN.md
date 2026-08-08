@@ -84,14 +84,14 @@ components:
 
 **Creative North Star: "Quiet paper desk"**
 
-A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo appears only as a quiet accent on links and status, not as a themed environment. Primary actions are black pills so the brand color does not dominate the screen.
+A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo is the action color (primary buttons) and a soft signal for the hero level bars; links and stable status also use teal. Chrome brand marks use the org play-store / circular logo assets under `brand/vocaphone/`.
 
 **Key Characteristics:**
 - Light paper neutrals, not graphite-teal immersion
 - Type and spacing carry hierarchy
 - Simple list rows for apps (hairline dividers)
-- Minimal motion (none decorative)
-- Logo is the only colorful brand object in the chrome
+- One soft decorative motion: hero level bars (respects reduced motion)
+- Primary CTAs in logo teal; secondary controls stay quiet
 
 ## Colors
 
@@ -107,7 +107,7 @@ Restrained palette. Neutrals do most of the work.
 - **Muted / faint** (#5c6360 / #8a918d): secondary text
 - **Line** (#e2e0da): dividers
 
-**The Quiet Accent Rule.** Teal is for meaning (links, stable), not atmosphere. No full-page teal glows, waveforms, or instrument panels.
+**The Quiet Accent Rule.** Teal is for actions, links, and a single soft hero signal. No full-page glows, nested instrument panels, or purple SaaS gradients.
 
 ## Typography
 
@@ -131,8 +131,8 @@ Small radius (8px) and pill buttons. No oversized instrument corners.
 ## Components
 
 ### Buttons
-- Primary: solid ink on paper
-- Ghost: thin neutral border
+- Primary: solid teal (`accent`) with on-accent text
+- Ghost: thin neutral border; teal on hover
 
 ### App rows
 - Hairline list, platform label + status, name, blurb, text links
@@ -144,11 +144,11 @@ Small radius (8px) and pill buttons. No oversized instrument corners.
 
 ### Do:
 - **Do** let whitespace and type set the tone
-- **Do** keep teal subordinate to ink and paper
+- **Do** use teal for primary CTAs and quiet status accents
 - **Do** preserve honest product status and human copy
 
 ### Don't:
-- **Don't** rebuild the graphite-teal "signal desk" world
-- **Don't** add decorative waveforms, glows, or LED grids
+- **Don't** rebuild a full graphite instrument desk
 - **Don't** use equal marketing icon-cards as the page structure
 - **Don't** lean on purple SaaS gradients or Inter defaults
+- **Don't** hard-code star counts that will rot

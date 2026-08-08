@@ -29,6 +29,13 @@
     mobileNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => setOpen(false));
     });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
   }
 
   // Pause decorative wave when the tab is hidden

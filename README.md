@@ -6,12 +6,10 @@ VocaHQ is the shared home for free, open source, offline voice dictation on Linu
 
 ## Design context
 
-This site follows [Impeccable](https://github.com/pbakaus/impeccable) project context:
+Design context for agents:
 
 - `PRODUCT.md` — product truth
-- `DESIGN.md` — local signal desk visual system
-
-Install design tooling in this repo with:
+- `DESIGN.md` — quiet paper desk visual system (teal accent, light ground)
 
 ```bash
 npx impeccable install --providers=grok --scope=project
