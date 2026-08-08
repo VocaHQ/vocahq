@@ -334,11 +334,6 @@ a:hover {
   color: var(--ink);
 }
 
-.platform-icons-pair .platform-icon {
-  width: 1.35rem;
-  height: 1.35rem;
-}
-
 /* Simple Icons (and server) via CSS mask so they pick up currentColor */
 .platform-icon {
   width: 1.7rem;
