@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body {
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  background: #f7f6f3;
+  color: #1a1c1b;
+  -webkit-font-smoothing: antialiased;
+}
+.frame {
+  width: 1200px; height: 630px;
+  padding: 52px 60px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+}
+.left {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-width: 0;
+}
+.right {
+  flex: 0.85;
+  height: 100%;
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(31,143,117,0.12), rgba(31,143,117,0.04));
+  border: 1px solid rgba(31,143,117,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  padding: 32px 28px;
+}
+.brand { display: flex; align-items: center; gap: 16px; }
+.brand img { width: 60px; height: 60px; border-radius: 14px; display: block; }
+.brand span {
+  font-family: Epilogue, sans-serif;
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: -0.03em;
+}
+h1 {
+  font-family: Epilogue, sans-serif;
+  font-weight: 700;
+  font-size: 56px;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  max-width: 12ch;
+}
+.sub {
+  font-size: 24px;
+  line-height: 1.4;
+  color: #5c6360;
+  max-width: 22ch;
+  margin-top: 18px;
+}
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.pill {
+  display: inline-flex;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #1f8f75;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.bars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 160px;
+}
+.bars i {
+  display: block;
+  width: 13px;
+  border-radius: 999px;
+  background: #1f8f75;
+  opacity: 0.8;
+}
+.bars i:nth-child(1) { height: 38%; }
+.bars i:nth-child(2) { height: 68%; }
+.bars i:nth-child(3) { height: 52%; }
+.bars i:nth-child(4) { height: 88%; }
+.bars i:nth-child(5) { height: 46%; }
+.bars i:nth-child(6) { height: 76%; }
+.bars i:nth-child(7) { height: 60%; }
+.bars i:nth-child(8) { height: 84%; }
+.bars i:nth-child(9) { height: 48%; }
+.bars i:nth-child(10) { height: 70%; }
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 340px;
+}
+.plat {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(247, 246, 243, 0.92);
+  border: 1px solid rgba(31,143,117,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.plat img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  /* recolor SVGs to teal via CSS filter-ish mask approach: use opacity and filter */
+  filter: brightness(0) saturate(100%) invert(42%) sepia(47%) saturate(624%) hue-rotate(121deg) brightness(92%) contrast(92%);
+}
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="left">
+    <div class="brand">
+      <img src="logo.png" width="60" height="60" alt="" />
+      <span>VocaHQ</span>
+    </div>
+    <div>
+      <h1>Offline voice. Every machine you own.</h1>
+      <p class="sub">Hold a hotkey. Speak. Text appears. Audio never leaves your device.</p>
+    </div>
+    <div class="footer">
+      <span class="pill">Open source</span>
+    </div>
+  </div>
+  <div class="right">
+    <div class="bars" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="platforms" aria-label="Platforms">
+      <div class="plat" title="Linux"><img src="icons/linux.svg" alt="" /></div>
+      <div class="plat" title="macOS"><img src="icons/apple.svg" alt="" /></div>
+      <div class="plat" title="Windows"><img src="icons/windows.svg" alt="" /></div>
+      <div class="plat" title="iOS"><img src="icons/apple.svg" alt="" /></div>
+      <div class="plat" title="Android"><img src="icons/android.svg" alt="" /></div>
+      <div class="plat" title="Gateway"><img src="icons/server.svg" alt="" /></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
