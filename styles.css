@@ -574,22 +574,16 @@ a:hover {
 }
 
 .footer-bottom {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
   margin-top: 1.75rem;
   padding-top: 1.15rem;
   border-top: 1px solid var(--line);
   color: var(--ink-faint);
   font-size: 0.88rem;
+  text-align: center;
 }
 
 .footer-bottom p {
   margin: 0;
-}
-
-.footer-bottom a {
-  color: var(--ink-muted);
 }
 
 @media (min-width: 720px) {
@@ -650,11 +644,6 @@ a:hover {
   .footer-inner {
     grid-template-columns: 1fr auto;
     align-items: start;
-  }
-
-  .footer-bottom {
-    flex-direction: row;
-    justify-content: space-between;
   }
 }
 
