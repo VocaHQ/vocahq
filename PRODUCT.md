@@ -56,7 +56,9 @@ Also: homebrew-vocamac tap. This repo is static landing + assets. Licenses: AGPL
 
 - Org profile README and repo descriptions
 - Product marketing sites for Linux/Mac/Win
-- Logo asset only on this site; no product screenshots committed here yet
+- Org logo at `assets/logo.png`
+- Brand pack: `brand/vocaphone/` (mark, logo SVG/PNG, app icon, play store art) from PR #1
+- No other product brand packs or screenshots in-repo yet
 - Do not fabricate testimonials, star counts beyond known public numbers, or press quotes
 
 ## Product Principles
