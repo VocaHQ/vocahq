@@ -42,7 +42,7 @@ Static HTML/CSS/JS at the repo root, custom domain `vocahq.com` (`CNAME` include
 | macOS | [VocaMac](https://github.com/VocaHQ/vocamac) | [vocamac.com](https://vocamac.com) | Beta |
 | Windows | [VocaWin](https://github.com/VocaHQ/vocawin) | [vocawin.com](https://vocawin.com) | Coming soon |
 | iOS / Android | [vocaphone](https://github.com/VocaHQ/vocaphone) | — | In development |
-| Server | [vocaserver](https://github.com/VocaHQ/vocaserver) | — | Early |
+| Gateway | [vocagateway](https://github.com/VocaHQ/vocagateway) | — | Early |
 
 ## Contact
 

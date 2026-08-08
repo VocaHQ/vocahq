@@ -40,13 +40,13 @@ Projects (status from org profile):
 | macOS | VocaMac | Beta (~75★) |
 | Windows | VocaWin | Coming soon |
 | iOS / Android | vocaphone | In development |
-| Server | vocaserver | Early (headless, set up once / run everywhere) |
+| Gateway | vocagateway | Early (headless, set up once / run everywhere) |
 
 Also: homebrew-vocamac tap. This repo is static landing + assets. Licenses: AGPL/GPL depending on project. No telemetry claims for local engines. Do not invent pricing, customers, benchmarks, or unreleased features.
 
 ## Brand Commitments
 
-- Name: VocaHQ / Voca family (VocaLinux, VocaMac, VocaWin, vocaphone, vocaserver)
+- Name: VocaHQ / Voca family (VocaLinux, VocaMac, VocaWin, VocaPhone, VocaGateway)
 - Logo: circular teal-to-mint gradient mic (assets/logo.png from org avatar)
 - Voice of the org profile: plain, direct, slightly warm; "To infinity and beyond!"; "Building this for the last 15 months has been an absolute joy"
 - Free forever, offline/privacy first, open source
