@@ -452,7 +452,7 @@ a:hover {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--accent);
 }
 
 .plans h3 {
@@ -604,7 +604,15 @@ a:hover {
   .plans li {
     grid-template-columns: 4.5rem 1fr;
     gap: 1.25rem;
-    align-items: start;
+    align-items: center;
+  }
+
+  .when {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100%;
   }
 
   .footer-inner {
