@@ -157,8 +157,8 @@ a:hover {
 
 .nav-toggle {
   margin-left: auto;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: transparent;
@@ -168,6 +168,7 @@ a:hover {
   justify-content: center;
   gap: 5px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .nav-toggle span:not(.sr-only) {
@@ -175,6 +176,7 @@ a:hover {
   width: 0.95rem;
   height: 1.5px;
   background: var(--ink);
+  transition: transform 0.15s var(--ease);
 }
 
 .nav-toggle[aria-expanded="true"] span:nth-child(2) {
@@ -185,6 +187,7 @@ a:hover {
   transform: translateY(-3.25px) rotate(-45deg);
 }
 
+/* [hidden] must win over display:grid or the menu stays open on mobile */
 .mobile-nav {
   display: grid;
   gap: 0.1rem;
@@ -192,11 +195,18 @@ a:hover {
   border-top: 1px solid var(--line);
 }
 
+.mobile-nav[hidden] {
+  display: none !important;
+}
+
 .mobile-nav a {
   color: var(--ink);
   text-decoration: none;
-  padding: 0.65rem 0.25rem;
+  padding: 0.85rem 0.25rem;
   font-weight: 700;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
 }
 
 /* Buttons */
@@ -252,7 +262,7 @@ a:hover {
   margin: 0;
   max-width: 20ch;
   font-family: var(--display);
-  font-size: clamp(2.15rem, 5.5vw, 3.25rem);
+  font-size: clamp(1.85rem, 6.5vw, 3.25rem);
   font-weight: 600;
   line-height: 1.12;
   letter-spacing: -0.03em;
@@ -398,7 +408,7 @@ a:hover {
 .app-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.35rem 1rem;
   margin-top: 0.85rem;
 }
 
@@ -407,6 +417,10 @@ a:hover {
   text-decoration: none;
   color: var(--ink);
   border-bottom: 1px solid var(--line-strong);
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0;
 }
 
 .app-actions a:hover {
@@ -522,7 +536,7 @@ a:hover {
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem 1.15rem;
+  gap: 0.25rem 0.35rem;
 }
 
 .footer-nav a {
@@ -530,6 +544,10 @@ a:hover {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 700;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.4rem;
 }
 
 .footer-nav a:hover {
@@ -549,6 +567,58 @@ a:hover {
   margin: 0;
 }
 
+/* Phone: slightly tighter vertical rhythm */
+@media (max-width: 719px) {
+  :root {
+    --section-y: 3.25rem;
+    --section-y-hero-top: 2.75rem;
+    --section-y-hero-bottom: 3rem;
+  }
+
+  .header-inner {
+    min-height: 3.5rem;
+  }
+
+  .hero-cta {
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    flex: 1 1 auto;
+    min-width: min(100%, 10rem);
+  }
+
+  .app-meta {
+    width: 100%;
+  }
+
+  .when {
+    color: var(--accent);
+  }
+}
+
+/* Tablet: keep full nav but allow header to wrap cleanly if needed */
+@media (min-width: 720px) and (max-width: 959px) {
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: 0.5rem;
+    padding-block: 0.35rem;
+  }
+
+  .nav {
+    order: 3;
+    flex: 1 1 100%;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-bottom: 0.15rem;
+  }
+
+  .header-actions {
+    margin-left: auto;
+  }
+}
+
 @media (min-width: 720px) {
   .nav,
   .header-actions {
@@ -566,8 +636,8 @@ a:hover {
   }
 
   .app {
-    grid-template-columns: 7.75rem 1fr;
-    gap: 1.75rem;
+    grid-template-columns: 6.75rem 1fr;
+    gap: 1.35rem;
     align-items: center;
   }
 
@@ -596,11 +666,6 @@ a:hover {
     text-align: center;
   }
 
-  .principles {
-    grid-template-columns: 1fr 1fr;
-    gap: 1.75rem 2.5rem;
-  }
-
   .plans li {
     grid-template-columns: 4.5rem 1fr;
     gap: 1.25rem;
@@ -618,6 +683,18 @@ a:hover {
   .footer-inner {
     grid-template-columns: 1fr auto;
     align-items: start;
+  }
+}
+
+@media (min-width: 960px) {
+  .app {
+    grid-template-columns: 7.75rem 1fr;
+    gap: 1.75rem;
+  }
+
+  .principles {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.5rem;
   }
 }
 
