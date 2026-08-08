@@ -345,14 +345,13 @@ a:hover {
   mask: var(--icon) center / contain no-repeat;
 }
 
-/* Official product brand marks (from brand/) */
-.product-mark {
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-  display: block;
+.platform-icons-pair .platform-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.brand img {
   border-radius: 50%;
-  object-fit: contain;
 }
 
 .app-meta-text {
@@ -630,9 +629,9 @@ a:hover {
     height: 1.85rem;
   }
 
-  .product-mark {
-    width: 2.15rem;
-    height: 2.15rem;
+  .platform-icons-pair .platform-icon {
+    width: 1.45rem;
+    height: 1.45rem;
   }
 
   .app-meta-text {
