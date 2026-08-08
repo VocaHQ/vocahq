@@ -3,6 +3,7 @@
   const toggle = document.querySelector("[data-nav-toggle]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
   const year = document.querySelector("[data-year]");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
@@ -15,18 +16,29 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  if (!toggle || !mobileNav) return;
+  if (toggle && mobileNav) {
+    const setOpen = (open) => {
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      mobileNav.hidden = !open;
+    };
 
-  const setOpen = (open) => {
-    toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    mobileNav.hidden = !open;
-  };
+    toggle.addEventListener("click", () => {
+      setOpen(toggle.getAttribute("aria-expanded") !== "true");
+    });
 
-  toggle.addEventListener("click", () => {
-    setOpen(toggle.getAttribute("aria-expanded") !== "true");
-  });
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+  }
 
-  mobileNav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => setOpen(false));
-  });
+  // Pause decorative wave when the tab is hidden
+  const bars = document.querySelector("[data-wave-bars]");
+  if (bars && !reduceMotion) {
+    document.addEventListener("visibilitychange", () => {
+      bars.style.animationPlayState = document.hidden ? "paused" : "running";
+      bars.querySelectorAll("span").forEach((el) => {
+        el.style.animationPlayState = document.hidden ? "paused" : "running";
+      });
+    });
+  }
 })();

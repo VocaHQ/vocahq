@@ -227,13 +227,13 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--accent);
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background: #000;
-  color: var(--bg);
+  background: var(--accent-hover);
+  color: #fff;
 }
 
 .btn-ghost {
@@ -243,9 +243,9 @@ a:hover {
 }
 
 .btn-ghost:hover {
-  border-color: var(--ink-faint);
-  color: var(--ink);
-  background: rgba(0, 0, 0, 0.03);
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  background: var(--accent-soft);
 }
 
 .btn-lg {
@@ -256,6 +256,13 @@ a:hover {
 /* Hero */
 .hero {
   padding: var(--section-y-hero-top) 0 var(--section-y-hero-bottom);
+  overflow: hidden;
+}
+
+.hero-layout {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
 }
 
 .hero h1 {
@@ -283,6 +290,61 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.65rem;
   margin-top: 1.75rem;
+}
+
+/* Soft local-signal visual — light paper, teal accent, not a heavy desk panel */
+.hero-wave {
+  position: relative;
+  color: var(--accent);
+  min-height: 7.5rem;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(31, 143, 117, 0.06), rgba(31, 143, 117, 0.02));
+  border: 1px solid rgba(31, 143, 117, 0.12);
+  padding: 1.25rem 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.wave-bars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.28rem;
+  width: 100%;
+  height: 5.5rem;
+}
+
+.wave-bars span {
+  flex: 1 1 0;
+  max-width: 0.45rem;
+  min-width: 0.22rem;
+  height: 18%;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.55;
+  transform-origin: center;
+  animation: wave-bar 1.4s ease-in-out infinite;
+}
+
+.wave-bars span:nth-child(4n + 1) { animation-duration: 1.15s; animation-delay: 0s; height: 28%; }
+.wave-bars span:nth-child(4n + 2) { animation-duration: 1.55s; animation-delay: 0.12s; height: 62%; }
+.wave-bars span:nth-child(4n + 3) { animation-duration: 1.25s; animation-delay: 0.05s; height: 44%; }
+.wave-bars span:nth-child(4n + 4) { animation-duration: 1.7s; animation-delay: 0.2s; height: 78%; }
+.wave-bars span:nth-child(odd) { opacity: 0.4; }
+.wave-bars span:nth-child(3n) { opacity: 0.7; }
+
+@keyframes wave-bar {
+  0%, 100% { transform: scaleY(0.45); opacity: 0.35; }
+  50% { transform: scaleY(1); opacity: 0.85; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-bars span {
+    animation: none;
+    transform: scaleY(0.7);
+    opacity: 0.5;
+  }
 }
 
 /* Sections — shared vertical rhythm */
@@ -588,6 +650,15 @@ a:hover {
     min-width: min(100%, 10rem);
   }
 
+  .hero-wave {
+    min-height: 5.5rem;
+    padding: 0.9rem 0.75rem;
+  }
+
+  .wave-bars {
+    height: 4rem;
+  }
+
   .app-meta {
     width: 100%;
   }
@@ -687,6 +758,19 @@ a:hover {
 }
 
 @media (min-width: 960px) {
+  .hero-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+  }
+
+  .hero-wave {
+    min-height: 12rem;
+  }
+
+  .wave-bars {
+    height: 8rem;
+  }
+
   .app {
     grid-template-columns: 7.75rem 1fr;
     gap: 1.75rem;
