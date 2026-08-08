@@ -1,47 +1,32 @@
 ---
 name: VocaHQ
-description: Local signal desk for offline voice dictation across every machine you own
+description: Minimal clean entry point for offline voice dictation across platforms
 colors:
-  ink: "#e6f4ef"
-  ink-muted: "#9ec4b8"
-  ink-faint: "#6f9489"
-  desk: "#0a1412"
-  desk-deep: "#060c0b"
-  desk-raised: "#12201c"
-  desk-panel: "#173028"
-  teal: "#2ec4a0"
-  teal-bright: "#5eecc8"
-  teal-deep: "#0d7a62"
-  amber-status: "#e8b84a"
-  sky-status: "#6ec8e8"
-  violet-status: "#b8a0f0"
-  line: "#2a4a42"
+  bg: "#f7f6f3"
+  bg-soft: "#efeeea"
+  ink: "#1a1c1b"
+  ink-muted: "#5c6360"
+  ink-faint: "#8a918d"
+  line: "#e2e0da"
+  line-strong: "#cdcbc3"
+  accent: "#1f8f75"
+  accent-hover: "#176b58"
+  accent-soft: "#e6f4ef"
 typography:
   display:
     fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(2.35rem, 6vw, 4.1rem)"
-    fontWeight: 700
-    lineHeight: 1.05
+    fontSize: "clamp(2.15rem, 5.5vw, 3.25rem)"
+    fontWeight: 600
+    lineHeight: 1.12
     letterSpacing: "-0.03em"
   headline:
     fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(1.7rem, 3.2vw, 2.25rem)"
-    fontWeight: 700
-    lineHeight: 1.12
-    letterSpacing: "-0.025em"
+    fontSize: "clamp(1.45rem, 2.8vw, 1.85rem)"
+    fontWeight: 600
   title:
     fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "1.35rem"
-    fontWeight: 700
-    letterSpacing: "-0.02em"
-  title-sm:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "1.12rem"
-    fontWeight: 700
-  quote:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "1.3rem"
-    fontWeight: 700
+    fontSize: "1.2rem"
+    fontWeight: 600
   body:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "1.0625rem"
@@ -50,172 +35,114 @@ typography:
   body-lg:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "1.12rem"
-    fontWeight: 400
-  body-sm:
+  label:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.98rem"
-    fontWeight: 400
+    fontSize: "0.8rem"
+    fontWeight: 700
   ui:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "0.95rem"
-    fontWeight: 700
-  meta:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.9rem"
-    fontWeight: 700
-  footer:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.92rem"
-    fontWeight: 400
   fine:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "0.88rem"
-    fontWeight: 400
-  label:
+  meta:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.78rem"
-    fontWeight: 700
-    letterSpacing: "0.04em"
-  micro:
+    fontSize: "0.9rem"
+  footer:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.75rem"
-    fontWeight: 700
-  channel-num:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.72rem"
-    fontWeight: 700
+    fontSize: "0.92rem"
 rounded:
-  sm: "6px"
-  md: "12px"
-  lg: "18px"
-  lg-plus: "20px"
+  sm: "8px"
   pill: "999px"
 spacing:
   sm: "8px"
   md: "16px"
   lg: "32px"
-  xl: "64px"
+  xl: "56px"
 components:
   button-primary:
-    backgroundColor: "{colors.teal}"
-    textColor: "{colors.desk}"
+    backgroundColor: "{colors.ink}"
+    textColor: "{colors.bg}"
     rounded: "{rounded.pill}"
-    padding: "14px 22px"
-  button-primary-hover:
-    backgroundColor: "{colors.teal-bright}"
-    textColor: "{colors.desk}"
+    padding: "12px 18px"
   button-ghost:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
     rounded: "{rounded.pill}"
-    padding: "14px 22px"
+    padding: "12px 18px"
 ---
 
 # Design System: VocaHQ
 
 ## Overview
 
-**Creative North Star: "The local signal desk"**
+**Creative North Star: "Quiet paper desk"**
 
-The site feels like a late-night desk where a field recorder and a waveform strip chart sit next to your keyboard. Your voice shows up as a local signal you can see: it never leaves the machine. Teal from the mic logo is the ink of that signal, drawn on a deep green-black desk ground (not pure black, not purple SaaS night).
-
-Hierarchy comes from scale and density, not from nested cards. Platforms read as mixer channels on a shared strip. Status is a small LED, not a marketing badge farm. One authored motion: the hero waveform breathing while idle.
+A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo appears only as a quiet accent on links and status, not as a themed environment. Primary actions are black pills so the brand color does not dominate the screen.
 
 **Key Characteristics:**
-- Graphite-teal desk, committed teal accent from the org logo
-- Waveform as product proof, not decoration
-- Channel-strip layout for projects instead of equal marketing cards
-- Atkinson Hyperlegible body type for readability; Epilogue for display
-- No purple gradients, no Inter, no eyebrow kickers
+- Light paper neutrals, not graphite-teal immersion
+- Type and spacing carry hierarchy
+- Simple list rows for apps (hairline dividers)
+- Minimal motion (none decorative)
+- Logo is the only colorful brand object in the chrome
 
 ## Colors
 
-Palette is desk green-black with teal signal ink. Status colors are subordinate LEDs.
+Restrained palette. Neutrals do most of the work.
 
 ### Primary
-- **Signal Teal** (#2ec4a0): primary actions, waveform, active channel marks
-- **Signal Bright** (#5eecc8): hover / live glow
-- **Signal Deep** (#0d7a62): pressed / deep fills
+- **Ink** (#1a1c1b): headings, primary buttons
+- **Accent teal** (#1f8f75): links, stable status, hover. Used sparingly
 
 ### Neutral
-- **Desk** (#0a1412): page ground
-- **Desk Raised** (#12201c): panels
-- **Desk Panel** (#173028): denser instrument faces
-- **Ink** (#e6f4ef): body text
-- **Ink Muted** (#9ec4b8): secondary text (teal-tinted, never gray)
-- **Ink Faint** (#6f9489): meta labels
-- **Line** (#2a4a42): hairline borders
+- **Paper** (#f7f6f3): page ground
+- **Soft paper** (#efeeea): alternate section band
+- **Muted / faint** (#5c6360 / #8a918d): secondary text
+- **Line** (#e2e0da): dividers
 
-### Status LEDs
-- Stable: teal; Beta: sky; Coming soon: amber; Early/dev: violet
-
-**The Local Ink Rule.** Secondary text is tinted from the desk/teal family. Never pure gray on the desk.
-
-**The One Signal Rule.** Teal is the only brand accent at page scale. Status LEDs stay small.
+**The Quiet Accent Rule.** Teal is for meaning (links, stable), not atmosphere. No full-page teal glows, waveforms, or instrument panels.
 
 ## Typography
 
-**Display Font:** Epilogue (system-ui, sans-serif)
-**Body Font:** Atkinson Hyperlegible (system-ui, sans-serif)
+**Display:** Epilogue (medium/semibold weights)
+**Body:** Atkinson Hyperlegible
 
-**Character:** Epilogue carries confident display weight without a default AI-serif costume. Atkinson Hyperlegible is plain and highly readable, fitting a voice-accessibility product.
-
-### Hierarchy
-- **Display** (700, clamp 2.4–4.25rem, 1.05 lh): hero only
-- **Headline** (650, clamp 1.6–2.2rem): section titles
-- **Title** (600, ~1.25rem): project names
-- **Body** (400, 1.0625rem, 1.65 lh, max ~70ch): prose
-- **Label** (700, 0.8125rem, slight tracking): channel meta, status
-
-**The No-Kicker Rule.** No uppercase eyebrow above headings. The heading speaks first.
+Calm scale. No oversized display drama. Sentence-case headings. No eyebrows/kickers.
 
 ## Layout
 
-Shell max ~1120px. First viewport is a thesis: large headline + live waveform + one primary action. Projects form a vertical channel strip (not a 2×2 card grid of icons). Principles run as a continuous band. Roadmap is a left-rail status path. Generous separation between sections; tighter groups inside channels.
-
-Breakpoints: ~720px nav expands; ~960px hero splits headline / instrument panel.
+Narrow reading measure (~720–880px). Hero is stacked text only. Apps are a single-column list with thin rules. Principles in a simple two-column grid on wide screens. Lots of vertical air.
 
 ## Elevation & Depth
 
-Mostly tonal layering on the desk. Soft offset shadows only under the primary instrument panel and final CTA block.
-
-### Shadow Vocabulary
-- **Panel lift** (`0 20px 50px rgba(0,0,0,0.4)`): hero instrument, closing CTA
-
-**The Flat Desk Rule.** Default surfaces are flat. Shadow marks a primary instrument, not every box.
+Flat. No heavy shadows. Sticky header uses a light blur only.
 
 ## Shapes
 
-Soft instrument corners (12–18px). Pills for buttons and LEDs. Waveform uses rounded stroke caps. Avoid hard brutalist offsets and nested rounded rectangles.
+Small radius (8px) and pill buttons. No oversized instrument corners.
 
 ## Components
 
 ### Buttons
-- **Shape:** pill
-- **Primary:** solid teal on desk ink color; brighten on hover
-- **Ghost:** transparent with teal-line border
+- Primary: solid ink on paper
+- Ghost: thin neutral border
 
-### Channel rows (projects)
-- Full-width instrument rows with left status LED, platform label, name, blurb, tags, actions
-- Featured stable product (VocaLinux) slightly taller / brighter border, not a nested card stack
+### App rows
+- Hairline list, platform label + status, name, blurb, text links
 
 ### Navigation
-- Sticky translucent desk bar; text links in muted ink; mobile toggle without hamburger icon soup (two bars)
-
-### Waveform
-- SVG path animation as the single authored motion; paused under reduced motion
+- Text links in muted ink; sticky paper bar
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** prove locality with the waveform and plain product claims
-- **Do** route people to platform sites and GitHub with clear status
-- **Do** keep teal as the brand signal from the mic logo
-- **Do** use sentence-case headings
+- **Do** let whitespace and type set the tone
+- **Do** keep teal subordinate to ink and paper
+- **Do** preserve honest product status and human copy
 
 ### Don't:
-- **Don't** ship equal icon+title+text marketing cards as the page structure
-- **Don't** use purple-to-blue AI gradients or pure black/gray neutrals
-- **Don't** use banned default faces (Inter, DM Sans, Fraunces, Space Grotesk, etc.)
-- **Don't** invent customers, benchmarks, or screenshots you don't have
-- **Don't** put an eyebrow/kicker above every section title
+- **Don't** rebuild the graphite-teal "signal desk" world
+- **Don't** add decorative waveforms, glows, or LED grids
+- **Don't** use equal marketing icon-cards as the page structure
+- **Don't** lean on purple SaaS gradients or Inter defaults
