@@ -27,8 +27,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Repo Settings → Pages must use "GitHub Actions" as the source (once).
+      # enablement: true attempts to turn Pages on if it is not already enabled.
       - name: Configure Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3

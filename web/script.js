@@ -36,6 +36,17 @@
         toggle.focus();
       }
     });
+
+    // Close mobile menu when crossing into the desktop nav layout (720px).
+    const desktopNav = window.matchMedia("(min-width: 720px)");
+    const closeOnDesktop = (event) => {
+      if (event.matches) setOpen(false);
+    };
+    if (typeof desktopNav.addEventListener === "function") {
+      desktopNav.addEventListener("change", closeOnDesktop);
+    } else if (typeof desktopNav.addListener === "function") {
+      desktopNav.addListener(closeOnDesktop);
+    }
   }
 
   // Pause decorative wave when the tab is hidden

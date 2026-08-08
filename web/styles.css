@@ -30,6 +30,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Offset sticky header so in-page anchors are not hidden under the bar */
+  scroll-padding-top: 4.5rem;
 }
 
 body {
@@ -637,6 +639,10 @@ a:hover {
     --section-y: 3.25rem;
     --section-y-hero-top: 2.75rem;
     --section-y-hero-bottom: 3rem;
+  }
+
+  html {
+    scroll-padding-top: 4.25rem;
   }
 
   .header-inner {
