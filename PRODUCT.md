@@ -27,7 +27,6 @@ Same privacy-first offline dictation idea on every platform you actually own, fr
 - Org: [github.com/VocaHQ](https://github.com/VocaHQ)
 - Domain: vocahq.com (GitHub Pages)
 - Contact: hello@vocahq.com
-- Maintainer: @jatinkrmalik
 - Sister product sites: vocalinux.com, vocamac.com, vocawin.com
 - Install paths live on product sites (Homebrew, curl installers, DMGs), not on this landing page
 
