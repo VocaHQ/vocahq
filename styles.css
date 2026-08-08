@@ -329,7 +329,8 @@ a:hover {
 .platform-icons {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  justify-content: center;
+  gap: 0.4rem;
   color: var(--ink);
 }
 
@@ -338,11 +339,15 @@ a:hover {
   height: 1.35rem;
 }
 
+/* Simple Icons (and server) via CSS mask so they pick up currentColor */
 .platform-icon {
-  width: 1.65rem;
-  height: 1.65rem;
+  width: 1.7rem;
+  height: 1.7rem;
   flex-shrink: 0;
   display: block;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
 }
 
 .app-meta-text {
@@ -602,16 +607,17 @@ a:hover {
   }
 
   .app {
-    grid-template-columns: 8.5rem 1fr;
+    grid-template-columns: 7.75rem 1fr;
     gap: 1.75rem;
-    align-items: start;
+    align-items: center;
   }
 
   .app-meta {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.55rem;
-    padding-top: 0.15rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
   }
 
   .platform-icon {
@@ -620,14 +626,15 @@ a:hover {
   }
 
   .platform-icons-pair .platform-icon {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.45rem;
+    height: 1.45rem;
   }
 
   .app-meta-text {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.2rem;
+    text-align: center;
   }
 
   .principles {
