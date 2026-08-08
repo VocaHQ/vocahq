@@ -251,6 +251,16 @@ a:hover {
   background: var(--accent-soft);
 }
 
+.btn-github {
+  gap: 0.45rem;
+  padding-inline: 0.95rem;
+}
+
+.btn-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
 .btn-lg {
   min-height: 2.85rem;
   padding-inline: 1.2rem;
@@ -473,24 +483,36 @@ a:hover {
 .app-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-  margin-top: 0.85rem;
+  gap: 0.5rem;
+  margin-top: 0.95rem;
 }
 
-.app-actions a {
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--ink);
-  border-bottom: 1px solid var(--line-strong);
-  min-height: 2.75rem;
+.app-link {
   display: inline-flex;
   align-items: center;
-  padding: 0.15rem 0;
+  gap: 0.4rem;
+  min-height: 2.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: border-color 0.15s var(--ease), color 0.15s var(--ease), background 0.15s var(--ease);
 }
 
-.app-actions a:hover {
-  color: var(--accent);
-  border-bottom-color: var(--accent);
+.app-link:hover {
+  border-color: var(--accent);
+  color: var(--accent-hover);
+  background: var(--accent-soft);
+}
+
+.app-link-icon {
+  flex-shrink: 0;
+  display: block;
+  opacity: 0.9;
 }
 
 /* Principles */

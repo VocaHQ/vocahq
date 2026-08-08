@@ -36,6 +36,8 @@ jobs:
           test -f web/styles.css
           test -f web/script.js
           test -f web/CNAME
+          test -f web/robots.txt
+          test -f web/sitemap.xml
           test -f web/assets/brand/vocaphone/vocaphone-logo.svg
           test -f web/assets/brand/vocaphone/vocaphone-logo-512.png
           test -f web/assets/brand/vocaphone/vocaphone-play-store-512.png
@@ -45,6 +47,7 @@ jobs:
           grep -q 'assets/brand/vocaphone/vocaphone-play-store-512.png' web/index.html
           grep -q 'assets/brand/vocaphone/vocaphone-logo-512.png' web/index.html
           grep -q 'assets/og/og-default.png' web/index.html
+          grep -q 'application/ld+json' web/index.html
           grep -q 'assets/icons/' web/index.html
           echo "web/ looks deployable"
 
