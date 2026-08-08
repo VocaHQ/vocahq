@@ -350,10 +350,6 @@ a:hover {
   height: 1.35rem;
 }
 
-.brand img {
-  border-radius: 50%;
-}
-
 .app-meta-text {
   display: flex;
   flex-wrap: wrap;
