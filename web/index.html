@@ -11,26 +11,33 @@
     FORM: Minimal quiet marketing surface (paper + teal accent).
   -->
   <title>VocaHQ · Offline voice dictation for every machine you own</title>
-  <meta name="description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Hold a hotkey, speak, and text appears at your cursor. Audio stays on your device." />
+  <meta name="description" content="VocaHQ is the open-source home for offline voice dictation: VocaLinux, VocaMac, VocaWin, VocaPhone, and VocaGateway. Hold a hotkey, speak, and text appears. Audio stays on your device." />
+  <meta name="author" content="VocaHQ" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#f7f6f3" />
+  <meta name="color-scheme" content="light" />
   <link rel="canonical" href="https://vocahq.com/" />
   <link rel="icon" href="assets/brand/vocaphone/vocaphone-logo.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/brand/vocaphone/vocaphone-logo-512.png" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="assets/brand/vocaphone/vocaphone-logo-512.png" />
+  <link rel="me" href="https://github.com/VocaHQ" />
+  <link rel="sitemap" type="application/xml" href="https://vocahq.com/sitemap.xml" />
 
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://vocahq.com/" />
   <meta property="og:site_name" content="VocaHQ" />
-  <meta property="og:title" content="VocaHQ · Offline voice dictation for every machine you own" />
-  <meta property="og:description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Audio stays on your device." />
+  <meta property="og:title" content="VocaHQ · Offline voice. Every machine you own." />
+  <meta property="og:description" content="Open-source offline voice dictation for Linux, macOS, Windows, phone, and gateway. Speak anywhere. Keep the audio home." />
   <meta property="og:image" content="https://vocahq.com/assets/og/og-default.png" />
+  <meta property="og:image:secure_url" content="https://vocahq.com/assets/og/og-default.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="VocaHQ: Offline voice. Every machine you own. Open source." />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="VocaHQ · Offline voice dictation for every machine you own" />
-  <meta name="twitter:description" content="Free, open source voice typing for Linux, Mac, Windows, and phone. Audio stays on your device." />
+  <meta name="twitter:title" content="VocaHQ · Offline voice. Every machine you own." />
+  <meta name="twitter:description" content="Open-source offline voice dictation for Linux, macOS, Windows, phone, and gateway. Speak anywhere. Keep the audio home." />
   <meta name="twitter:image" content="https://vocahq.com/assets/og/og-default.png" />
   <meta name="twitter:image:alt" content="VocaHQ: Offline voice. Every machine you own. Open source." />
 
@@ -38,6 +45,73 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Epilogue:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vocahq.com/#organization",
+        "name": "VocaHQ",
+        "url": "https://vocahq.com/",
+        "logo": "https://vocahq.com/assets/brand/vocaphone/vocaphone-logo-512.png",
+        "email": "hello@vocahq.com",
+        "sameAs": ["https://github.com/VocaHQ"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://vocahq.com/#website",
+        "url": "https://vocahq.com/",
+        "name": "VocaHQ",
+        "description": "Open-source offline voice dictation for every machine you own.",
+        "publisher": { "@id": "https://vocahq.com/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "ItemList",
+        "name": "Voca ecosystem",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "VocaLinux",
+            "url": "https://vocalinux.com/",
+            "description": "Offline voice dictation for Linux (X11 and Wayland)."
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "VocaMac",
+            "url": "https://vocamac.com/",
+            "description": "Offline voice-to-text for macOS with WhisperKit."
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "VocaWin",
+            "url": "https://vocawin.com/",
+            "description": "Offline voice-to-text for Windows (coming soon)."
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "VocaPhone",
+            "url": "https://github.com/VocaHQ/vocaphone",
+            "description": "Offline voice-to-text for iOS and Android."
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "VocaGateway",
+            "url": "https://github.com/VocaHQ/vocagateway",
+            "description": "Headless Voca gateway: set up once, run everywhere."
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -55,7 +129,10 @@
         <a href="#involve">Contribute</a>
       </nav>
       <div class="header-actions">
-        <a class="btn btn-ghost" href="https://github.com/VocaHQ" rel="noopener noreferrer">GitHub</a>
+        <a class="btn btn-ghost btn-github" href="https://github.com/VocaHQ" rel="noopener noreferrer">
+          <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true" width="16" height="16"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          <span>GitHub</span>
+        </a>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" data-nav-toggle>
         <span class="sr-only">Menu</span>
@@ -119,8 +196,14 @@
               </p>
               <p class="app-tags">Python · whisper.cpp · X11 · Wayland</p>
               <div class="app-actions">
-                <a href="https://vocalinux.com" rel="noopener noreferrer">vocalinux.com</a>
-                <a href="https://github.com/VocaHQ/vocalinux" rel="noopener noreferrer">GitHub</a>
+                <a class="app-link" href="https://vocalinux.com" rel="noopener noreferrer" aria-label="VocaLinux website">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3"/><path d="M14 4h6v6"/><path d="M14 10 20 4"/></svg>
+                  <span>Website</span>
+                </a>
+                <a class="app-link" href="https://github.com/VocaHQ/vocalinux" rel="noopener noreferrer" aria-label="VocaLinux on GitHub">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Source</span>
+                </a>
               </div>
             </div>
           </li>
@@ -143,8 +226,14 @@
               </p>
               <p class="app-tags">Swift · WhisperKit · Apple Silicon</p>
               <div class="app-actions">
-                <a href="https://vocamac.com" rel="noopener noreferrer">vocamac.com</a>
-                <a href="https://github.com/VocaHQ/vocamac" rel="noopener noreferrer">GitHub</a>
+                <a class="app-link" href="https://vocamac.com" rel="noopener noreferrer" aria-label="VocaMac website">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3"/><path d="M14 4h6v6"/><path d="M14 10 20 4"/></svg>
+                  <span>Website</span>
+                </a>
+                <a class="app-link" href="https://github.com/VocaHQ/vocamac" rel="noopener noreferrer" aria-label="VocaMac on GitHub">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Source</span>
+                </a>
               </div>
             </div>
           </li>
@@ -167,8 +256,14 @@
               </p>
               <p class="app-tags">Offline-first · System tray · GPU planned</p>
               <div class="app-actions">
-                <a href="https://vocawin.com" rel="noopener noreferrer">vocawin.com</a>
-                <a href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer">GitHub</a>
+                <a class="app-link" href="https://vocawin.com" rel="noopener noreferrer" aria-label="VocaWin website">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M10 6H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3"/><path d="M14 4h6v6"/><path d="M14 10 20 4"/></svg>
+                  <span>Website</span>
+                </a>
+                <a class="app-link" href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer" aria-label="VocaWin on GitHub">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Source</span>
+                </a>
               </div>
             </div>
           </li>
@@ -192,7 +287,10 @@
               </p>
               <p class="app-tags">Mobile · On-device STT</p>
               <div class="app-actions">
-                <a href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer">GitHub</a>
+                <a class="app-link" href="https://github.com/VocaHQ/vocaphone" rel="noopener noreferrer" aria-label="VocaPhone on GitHub">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Source</span>
+                </a>
               </div>
             </div>
           </li>
@@ -215,7 +313,10 @@
               </p>
               <p class="app-tags">Headless · Set up once</p>
               <div class="app-actions">
-                <a href="https://github.com/VocaHQ/vocagateway" rel="noopener noreferrer">GitHub</a>
+                <a class="app-link" href="https://github.com/VocaHQ/vocagateway" rel="noopener noreferrer" aria-label="VocaGateway on GitHub">
+                  <svg class="app-link-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                  <span>Source</span>
+                </a>
               </div>
             </div>
           </li>
