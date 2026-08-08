@@ -12,6 +12,7 @@ colors:
   accent: "#1f8f75"
   accent-hover: "#176b58"
   accent-soft: "#e6f4ef"
+  on-accent: "#ffffff"
 typography:
   display:
     fontFamily: "Epilogue, system-ui, sans-serif"
@@ -32,6 +33,10 @@ typography:
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.65
+  brand:
+    fontFamily: "Epilogue, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 600
   body-lg:
     fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
     fontSize: "1.12rem"
@@ -53,6 +58,7 @@ typography:
     fontSize: "0.92rem"
 rounded:
   sm: "8px"
+  md: "16px"
   pill: "999px"
 spacing:
   sm: "8px"

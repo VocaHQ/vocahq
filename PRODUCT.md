@@ -42,12 +42,12 @@ Projects (status from org profile):
 | iOS / Android | vocaphone | In development |
 | Gateway | vocagateway | Early (headless, set up once / run everywhere) |
 
-Also: homebrew-vocamac tap. This repo is static landing + assets. Licenses: AGPL/GPL depending on project. No telemetry claims for local engines. Do not invent pricing, customers, benchmarks, or unreleased features.
+Also: homebrew-vocamac tap. This repo is static landing + assets. Shipping product repos use AGPL-3.0; VocaWin is still pre-license "coming soon." No telemetry claims for local engines. Do not invent pricing, customers, benchmarks, or unreleased features.
 
 ## Brand Commitments
 
 - Name: VocaHQ / Voca family (VocaLinux, VocaMac, VocaWin, VocaPhone, VocaGateway)
-- Logo: circular teal-to-mint gradient mic (assets/logo.png from org avatar)
+- Logo: brand marks under brand/vocaphone/ (play-store mark for chrome, circular logo for favicon)
 - Voice of the org profile: plain, direct, slightly warm; "To infinity and beyond!"; "Building this for the last 15 months has been an absolute joy"
 - Free forever, offline/privacy first, open source
 
@@ -55,8 +55,8 @@ Also: homebrew-vocamac tap. This repo is static landing + assets. Licenses: AGPL
 
 - Org profile README and repo descriptions
 - Product marketing sites for Linux/Mac/Win
-- Org logo at `assets/logo.png`
 - Brand pack: `brand/vocaphone/` (mark, logo SVG/PNG, app icon, play store art) from PR #1
+- Platform icons: Simple Icons SVGs under `assets/icons/`
 - No other product brand packs or screenshots in-repo yet
 - Do not fabricate testimonials, star counts beyond known public numbers, or press quotes
 

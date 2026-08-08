@@ -10,6 +10,7 @@
   --accent: #1f8f75;
   --accent-hover: #176b58;
   --accent-soft: #e6f4ef;
+  --on-accent: #ffffff;
   --shell: 880px;
   --font: "Atkinson Hyperlegible", system-ui, sans-serif;
   --display: "Epilogue", system-ui, sans-serif;
@@ -228,12 +229,12 @@ a:hover {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent, #fff);
 }
 
 .btn-primary:hover {
   background: var(--accent-hover);
-  color: #fff;
+  color: var(--on-accent, #fff);
 }
 
 .btn-ghost {
