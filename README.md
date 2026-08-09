@@ -25,8 +25,7 @@ Product code lives in sibling repos under [github.com/VocaHQ](https://github.com
     ├── CNAME                  # vocahq.com
     ├── DESIGN.md              # Site visual system
     └── assets/
-        ├── brand/             # Official product / org brand packs
-        │   └── vocaphone/
+        ├── brand/             # Shared Voca org brand (icons, logos, marks)
         └── icons/             # Platform marks (Simple Icons, etc.)
 ```
 

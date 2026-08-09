@@ -84,7 +84,7 @@ components:
 
 **Creative North Star: "Quiet paper desk"**
 
-A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo is the action color (primary buttons) and a soft signal for the hero level bars; links and stable status also use teal. Chrome brand marks use the org play-store / circular logo assets under `assets/brand/vocaphone/`.
+A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo is the action color (primary buttons) and a soft signal for the hero level bars; links and stable status also use teal. Chrome brand marks use the shared org icon / circular logo assets under `assets/brand/`.
 
 **Key Characteristics:**
 - Light paper neutrals, not graphite-teal immersion
