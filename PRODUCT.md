@@ -47,7 +47,7 @@ Also: homebrew-vocamac tap. This repo is static landing + assets. Shipping produ
 ## Brand Commitments
 
 - Name: VocaHQ / Voca family (VocaLinux, VocaMac, VocaWin, VocaPhone, VocaGateway)
-- Logo: brand marks under `web/assets/brand/vocaphone/` (play-store mark for chrome, circular logo for favicon). Pack includes light icon on teal (default), dark icon on teal (`*-dark`), monochrome mark, and white mark (`vocaphone-mark-white.svg`) for theming
+- Logo: shared org brand under `web/assets/brand/` (square icon for chrome, circular logo for favicon). Pack includes light icon on teal (default), dark icon on teal (`*-dark`), monochrome mark, and white mark (`voca-mark-white.svg`) for theming. Other Voca repos should point here.
 - Voice of the org profile: plain, direct, slightly warm; "To infinity and beyond!"; "Building this for the last 15 months has been an absolute joy"
 - Free forever, offline/privacy first, open source
 
@@ -55,7 +55,7 @@ Also: homebrew-vocamac tap. This repo is static landing + assets. Shipping produ
 
 - Org profile README and repo descriptions
 - Product marketing sites for Linux/Mac/Win
-- Brand packs: `web/assets/brand/<product>/` (VocaPhone pack from PR #1)
+- Shared brand assets: `web/assets/brand/` (`voca-*` icons/logos/marks)
 - Platform icons: Simple Icons SVGs under `web/assets/icons/`
 - Public site: `web/` (GitHub Pages via Actions)
 - No other product brand packs or screenshots in-repo yet
