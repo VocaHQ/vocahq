@@ -85,7 +85,7 @@ test("preserves accessible no-script fallbacks and behavior hooks", () => {
   assert.match(script, /Escape/);
   assert.match(script, /prefers-reduced-motion/);
   assert.match(script, /IntersectionObserver/);
-  assert.match(script, /setTimeout/);
+  assert.match(script, /setTimeout\(\(\) => revealItems\.forEach\(reveal\), 800\)/);
 });
 
 test("keeps the three numbered stories in normal flow", () => {

@@ -84,7 +84,7 @@
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
     revealItems.forEach((item) => observer.observe(item));
-    window.setTimeout(() => revealItems.forEach(reveal), 1400);
+    window.setTimeout(() => revealItems.forEach(reveal), 800);
   }
 
   const animatedTrack = document.querySelector(".ribbon-track");
