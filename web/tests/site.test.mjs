@@ -7,6 +7,7 @@ const root = resolve(import.meta.dirname, "..");
 const html = await readFile(join(root, "index.html"), "utf8");
 const css = await readFile(join(root, "styles.css"), "utf8");
 const script = await readFile(join(root, "script.js"), "utf8");
+const contributionArt = await readFile(join(root, "assets/illustrations/contribute-flow.svg"), "utf8");
 
 const localAssetPaths = [...html.matchAll(/(?:src|href)="(assets\/[^"#?]+)"/g)].map((match) => match[1]);
 const rootAssetPaths = [...html.matchAll(/(?:src|href)="((?:assets\/|favicon\.ico)[^"#?]*)"/g)].map((match) => match[1]);
@@ -84,4 +85,11 @@ test("keeps the visual and hosting boundaries explicit", () => {
   assert.doesNotMatch(html, /github\.com\/VocaHQ\/vocawin[^<]{0,100}release/i);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*hidden/);
+});
+
+test("keeps the contribution illustration stable and fully framed", () => {
+  assert.match(contributionArt, /preserveAspectRatio="xMidYMid meet"/);
+  assert.match(contributionArt, /style="overflow: visible"/);
+  assert.doesNotMatch(contributionArt, /@keyframes float|class="float/);
+  assert.match(contributionArt, /ship the idea/);
 });
