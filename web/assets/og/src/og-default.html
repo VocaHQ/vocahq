@@ -1,153 +1,460 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200, initial-scale=1">
+<title>VocaHQ social card</title>
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { width: 1200px; height: 630px; overflow: hidden; }
+:root {
+  --paper: #f4f1e8;
+  --deep-paper: #ebe5d8;
+  --bright-paper: #fffdf7;
+  --ink: #14231c;
+  --muted: #58625c;
+  --line: #d5d0c4;
+  --teal: #0f6b57;
+  --dark-teal: #0b493d;
+  --mint: #cfe9dc;
+  --yellow: #e8c965;
+  --red: #e77b68;
+  --display: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  --body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html,
 body {
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  background: #f4f1e8;
-  color: #14231c;
+  width: 1200px;
+  height: 630px;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper) url("../../brand/paper-dots.svg") repeat;
+  font-family: var(--body);
   -webkit-font-smoothing: antialiased;
 }
+
 .frame {
-  width: 1200px; height: 630px;
-  padding: 48px 56px;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 44px;
+  position: relative;
+  display: grid;
+  grid-template-rows: 58px 1fr;
+  width: 100%;
+  height: 100%;
+  padding: 34px 42px 40px;
 }
-.left {
-  flex: 1.2;
+
+.header {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  min-width: 0;
-}
-.right {
-  flex: 0.8;
-  border-radius: 24px;
-  background: #e5f2eb;
-  border: 1px solid #cfe9dc;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 36px 28px;
-  gap: 32px;
-}
-.brand { display: flex; align-items: center; gap: 16px; }
-.brand img { width: 60px; height: 60px; border-radius: 14px; display: block; }
-.brand span {
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 36px;
-  letter-spacing: -0.03em;
-}
-h1 {
-  font-family: ui-sans-serif, system-ui, sans-serif;
-  font-weight: 700;
-  font-size: 60px;
-  letter-spacing: -0.035em;
-  line-height: 1.04;
-  max-width: 14ch;
-}
-.sub {
-  font-size: 26px;
-  line-height: 1.4;
-  color: #58625c;
-  max-width: 24ch;
-  margin-top: 20px;
-}
-.copy { margin-top: 4px; }
-
-.platforms {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
-}
-.plat {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
-  background: #fff;
-  border: 1px solid #e2e0da;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03);
-}
-.plat img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  filter: brightness(0) saturate(100%) invert(42%) sepia(47%) saturate(624%) hue-rotate(121deg) brightness(92%) contrast(92%);
 }
 
-.bars {
+.brand {
   display: flex;
   align-items: center;
   gap: 11px;
-  height: 190px;
+  font-family: var(--display);
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -0.055em;
 }
-.bars i {
-  display: block;
-  width: 14px;
-  border-radius: 999px;
-  background: #1f8f75;
-  opacity: 0.85;
-}
-.bars i:nth-child(1) { height: 36%; }
-.bars i:nth-child(2) { height: 66%; }
-.bars i:nth-child(3) { height: 50%; }
-.bars i:nth-child(4) { height: 88%; }
-.bars i:nth-child(5) { height: 44%; }
-.bars i:nth-child(6) { height: 74%; }
-.bars i:nth-child(7) { height: 58%; }
-.bars i:nth-child(8) { height: 82%; }
-.bars i:nth-child(9) { height: 46%; }
-.bars i:nth-child(10) { height: 70%; }
 
-.right-note {
-  font-size: 30px;
+.brand img {
+  width: 38px;
+  height: 38px;
+}
+
+.header-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
   font-weight: 700;
-  color: #1f8f75;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.header-note::before {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 4px var(--mint);
+  content: "";
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 510px;
+  gap: 54px;
+  align-items: center;
+}
+
+.copy {
+  padding-left: 24px;
+}
+
+.kicker {
+  margin: 0 0 20px;
+  color: var(--teal);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  max-width: 500px;
+  margin: 0;
+  font-family: var(--display);
+  font-size: 84px;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 0.88;
+}
+
+h1 em {
+  color: var(--teal);
+  font-style: normal;
+}
+
+.lede {
+  max-width: 470px;
+  margin: 27px 0 0;
+  color: var(--muted);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+.promises {
+  display: flex;
+  gap: 16px;
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.promises span::before {
+  margin-right: 7px;
+  color: var(--teal);
+  content: "·";
+}
+
+.board {
+  position: relative;
+  width: 510px;
+  height: 464px;
+  overflow: hidden;
+  border: 2px solid var(--ink);
+  border-radius: 27px;
+  background: var(--deep-paper);
+  box-shadow: 11px 11px 0 var(--ink);
+}
+
+.board-title,
+.board-foot {
+  position: absolute;
+  z-index: 5;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.board-title { top: 20px; left: 23px; }
+.board-foot { right: 22px; bottom: 17px; }
+
+.connections {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.connections path {
+  fill: none;
+  stroke: var(--teal);
+  stroke-dasharray: 7 8;
+  stroke-width: 2.5;
+  opacity: 0.72;
+}
+
+.connections circle {
+  fill: var(--paper);
+  stroke: var(--teal);
+  stroke-width: 2.5;
+}
+
+.window,
+.gateway {
+  position: absolute;
+  z-index: 3;
+  overflow: hidden;
+  border: 1.5px solid var(--ink);
+  border-radius: 9px;
+  background: var(--bright-paper);
+  box-shadow: 6px 6px 0 rgba(20, 35, 28, 0.16);
+}
+
+.linux {
+  top: 70px;
+  left: 28px;
+  width: 210px;
+  transform: rotate(-3deg);
+}
+
+.mac {
+  top: 82px;
+  right: 25px;
+  width: 208px;
+  transform: rotate(3deg);
+}
+
+.windows {
+  bottom: 38px;
+  left: 28px;
+  width: 205px;
+  transform: rotate(2deg);
+}
+
+.window-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 31px;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+}
+
+.lights {
+  display: flex;
+  gap: 4px;
+}
+
+.lights i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+}
+
+.lights i:nth-child(2) { background: var(--yellow); }
+.lights i:nth-child(3) { background: var(--teal); }
+
+.window-body {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 55px;
+  padding: 12px 14px;
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+.prompt {
+  color: var(--teal);
+  font-weight: 800;
+}
+
+.ready {
+  margin-left: auto;
+  color: var(--teal);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.phone {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  bottom: 66px;
+  width: 112px;
+  height: 188px;
+  padding: 7px;
+  border-radius: 22px;
+  background: var(--ink);
+  box-shadow: 8px 8px 0 rgba(20, 35, 28, 0.18);
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+.phone-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 25px 12px 12px;
+  border-radius: 16px;
+  background: var(--bright-paper);
+}
+
+.phone-screen small {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 8px;
+}
+
+.phone-screen strong {
+  margin-top: 22px;
+  font-family: var(--display);
+  font-size: 20px;
+  letter-spacing: -0.05em;
+}
+
+.field {
+  margin-top: 13px;
+  padding: 10px 7px 22px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.phone-button {
+  margin-top: auto;
+  padding: 7px 5px;
+  border-radius: 99px;
+  color: var(--bright-paper);
+  background: var(--teal);
+  font-size: 8px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.gateway {
+  right: 22px;
+  bottom: 43px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3px 8px;
+  width: 188px;
+  padding: 13px;
+  border-color: var(--teal);
+  border-radius: 6px;
+  color: var(--dark-teal);
+  background: var(--mint);
+  font-family: var(--mono);
+  transform: rotate(2deg);
+}
+
+.gateway-dot {
+  width: 12px;
+  height: 12px;
+  margin-top: 1px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 0 5px rgba(15, 107, 87, 0.15);
+}
+
+.gateway strong { font-size: 13px; }
+.gateway small { grid-column: 2; color: var(--muted); font-size: 10px; }
+
+.seal {
+  position: absolute;
+  z-index: 6;
+  top: 226px;
+  right: 28px;
+  display: grid;
+  place-content: center;
+  width: 78px;
+  height: 78px;
+  border: 2px solid var(--red);
+  border-radius: 50%;
+  color: var(--red);
+  background: rgba(244, 241, 232, 0.92);
+  box-shadow: inset 0 0 0 4px var(--paper), inset 0 0 0 5.5px var(--red);
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1.08;
+  text-align: center;
+  transform: rotate(9deg);
+}
+
+.seal span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 12px;
 }
 </style>
 </head>
 <body>
-<div class="frame">
-  <div class="left">
-    <div class="brand">
-      <img src="../../brand/voca-icon-512.png" width="60" height="60" alt="" />
-      <span>VocaHQ</span>
-    </div>
+  <main class="frame">
+    <header class="header">
+      <div class="brand">
+        <img src="../../brand/voca-app-icon.svg" width="38" height="38" alt="">
+        <span>VocaHQ</span>
+      </div>
+      <div class="header-note">Private speech-to-text, in public</div>
+    </header>
 
-    <div class="copy">
-      <h1>Private speech-to-text.<br>Every machine<br>you own.</h1>
-      <p class="sub">On-device first. An optional self-hosted gateway when you choose the path.</p>
-    </div>
+    <div class="layout">
+      <section class="copy">
+        <p class="kicker">One family. Every surface.</p>
+        <h1>one voice.<br><em>every<br>machine.</em></h1>
+        <p class="lede">Free and open-source speech-to-text across the machines you own.</p>
+        <p class="promises"><span>on-device first</span><span>gateway optional</span><span>open source</span></p>
+      </section>
 
-    <div class="platforms" aria-label="Platforms">
-      <div class="plat" title="Linux"><img src="../../icons/linux.svg" alt="" /></div>
-      <div class="plat" title="macOS"><img src="../../icons/apple.svg" alt="" /></div>
-      <div class="plat" title="Windows"><img src="../../icons/windows.svg" alt="" /></div>
-      <div class="plat" title="iOS"><img src="../../icons/apple.svg" alt="" /></div>
-      <div class="plat" title="Android"><img src="../../icons/android.svg" alt="" /></div>
-      <div class="plat" title="Gateway"><img src="../../icons/server.svg" alt="" /></div>
-    </div>
-  </div>
+      <section class="board" aria-label="Voca ecosystem map">
+        <span class="board-title">VOCA / ECOSYSTEM.MAP</span>
+        <span class="board-foot">same promise · different surfaces</span>
 
-  <div class="right">
-    <div class="bars" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <svg class="connections" viewBox="0 0 510 464" aria-hidden="true">
+          <path d="M135 162 C164 192 189 210 241 251" />
+          <path d="M393 172 C369 201 342 221 270 253" />
+          <path d="M134 375 C166 350 190 329 236 301" />
+          <path d="M378 357 C348 333 324 316 275 292" />
+          <circle cx="254" cy="272" r="7" />
+        </svg>
+
+        <div class="window linux">
+          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>linux / vocalinux</span></div>
+          <div class="window-body"><span class="prompt">$</span><span>dictate --local</span><span class="ready">READY</span></div>
+        </div>
+
+        <div class="window mac">
+          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>mac / vocamac</span></div>
+          <div class="window-body"><span class="prompt">⌁</span><span>hold right option</span></div>
+        </div>
+
+        <div class="phone">
+          <div class="phone-screen">
+            <small>9:41</small>
+            <strong>dictate</strong>
+            <span class="field">your words<br>land here<span class="prompt">│</span></span>
+            <span class="phone-button">start dictation</span>
+          </div>
+        </div>
+
+        <div class="window windows">
+          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>windows / next</span></div>
+          <div class="window-body"><span class="prompt">›</span><span>coming soon</span></div>
+        </div>
+
+        <div class="gateway">
+          <span class="gateway-dot"></span><strong>VocaGateway</strong><small>your hardware</small>
+        </div>
+
+        <div class="seal"><span>✦</span>OPEN SOURCE<br>BUILT IN PUBLIC</div>
+      </section>
     </div>
-    <div class="right-note">100% open source</div>
-  </div>
-</div>
+  </main>
 </body>
 </html>

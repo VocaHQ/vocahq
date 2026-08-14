@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 500" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc" style="overflow: visible">
+  <title id="title">From idea to pull request</title>
+  <desc id="desc">A code window moves through review to a merged contribution.</desc>
+  <style>
+    :root { --paper: #fffdf7; --deep-paper: #ebe5d8; --ink: #14231c; --muted: #58625c; --teal: #0f6b57; --dark-teal: #0b493d; --mint: #cfe9dc; --yellow: #e8c965; --red: #e77b68; }
+    .ink { fill: var(--ink); }
+    .muted { fill: var(--muted); }
+    .paper { fill: var(--paper); }
+    .deep-paper { fill: var(--deep-paper); }
+    .mint { fill: var(--mint); }
+    .teal { fill: var(--teal); }
+    .dark-teal { fill: var(--dark-teal); }
+    .yellow { fill: var(--yellow); }
+    .red { fill: var(--red); }
+    .stroke-ink { stroke: var(--ink); }
+    .stroke-teal { stroke: var(--teal); }
+    .stroke-line { stroke: #d5d0c4; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .body { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .display { font-family: "Avenir Next", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif; }
+    .dash { animation: dash 5.6s linear infinite; }
+    .blink { animation: blink 1.4s steps(2, end) infinite; }
+    @keyframes dash { to { stroke-dashoffset: -40; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) {
+      .dash, .blink { animation: none; }
+    }
+  </style>
+
+  <path d="M284 318 C326 366 400 358 548 332" fill="none" stroke="#0f6b57" stroke-width="3" stroke-dasharray="8 12" class="dash" opacity=".8"/>
+  <circle cx="388" cy="350" r="8" class="paper stroke-teal" stroke-width="3"/>
+  <circle cx="388" cy="350" r="3" class="teal"/>
+
+  <g>
+    <rect x="74" y="92" width="302" height="214" rx="12" class="paper stroke-ink" stroke-width="3"/>
+    <path d="M74 134h302" class="stroke-line" stroke-width="2"/>
+    <circle cx="96" cy="113" r="6" class="red"/>
+    <circle cx="116" cy="113" r="6" class="yellow"/>
+    <circle cx="136" cy="113" r="6" class="teal"/>
+    <text x="160" y="118" class="mono muted" font-size="14">idea / improve.md</text>
+    <text x="99" y="171" class="mono teal" font-size="15">+ make the small thing</text>
+    <text x="99" y="198" class="mono teal" font-size="15">+ easier to use</text>
+    <text x="99" y="244" class="mono muted" font-size="13">git diff --stat</text>
+    <rect x="99" y="263" width="102" height="5" rx="2.5" class="mint"/>
+    <rect x="208" y="263" width="56" height="5" rx="2.5" class="deep-paper"/>
+    <rect x="274" y="263" width="26" height="5" rx="2.5" class="teal"/>
+  </g>
+
+  <g transform="rotate(4 515 126)">
+    <rect x="400" y="72" width="230" height="108" rx="10" class="mint stroke-ink" stroke-width="3"/>
+    <text x="424" y="108" class="mono dark-teal" font-size="11">PULL REQUEST</text>
+    <text x="424" y="140" class="display ink" font-size="18" font-weight="800">ready for review</text>
+    <circle cx="594" cy="103" r="12" class="teal"/>
+    <path d="m588 103 5 5 9-11" fill="none" stroke="#fffdf7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <g transform="rotate(-4 531 330)">
+    <rect x="428" y="280" width="206" height="100" rx="10" class="dark-teal stroke-ink" stroke-width="3"/>
+    <circle cx="456" cy="316" r="12" class="yellow"/>
+    <path d="m450 316 5 5 9-11" fill="none" stroke="#0b493d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="481" y="319" class="mono mint" font-size="12">MERGED</text>
+    <text x="446" y="351" class="display paper" font-size="17" font-weight="800">ship the idea</text>
+  </g>
+
+  <g class="blink">
+    <rect x="346" y="345" width="3" height="22" rx="1.5" class="teal"/>
+  </g>
+</svg>

@@ -45,6 +45,7 @@ jobs:
           test -f web/assets/og/og-default.png
           test -f web/assets/icons/linux.svg
           test -f web/assets/brand/paper-dots.svg
+          test -f web/assets/illustrations/contribute-flow.svg
           test -f web/package.json
           test -f web/tests/site.test.mjs
           # Relative asset refs used by the page must resolve under web/
