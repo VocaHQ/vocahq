@@ -1,154 +1,103 @@
 ---
-name: VocaHQ
-description: Minimal clean entry point for offline voice dictation across platforms
+name: VocaHQ ecosystem workbench
+description: Shared VocaPhone-inspired visual language for the VocaHQ directory
 colors:
-  bg: "#f7f6f3"
-  bg-soft: "#efeeea"
-  ink: "#1a1c1b"
-  ink-muted: "#5c6360"
-  ink-faint: "#8a918d"
-  line: "#e2e0da"
-  line-strong: "#cdcbc3"
-  accent: "#1f8f75"
-  accent-hover: "#176b58"
-  accent-soft: "#e6f4ef"
-  on-accent: "#ffffff"
+  paper: "#f4f1e8"
+  deep-paper: "#ebe5d8"
+  bright-paper: "#fffdf7"
+  ink: "#14231c"
+  muted: "#58625c"
+  faint: "#7c847d"
+  line: "#d5d0c4"
+  teal: "#0f6b57"
+  dark-teal: "#0b493d"
+  dark-ink: "#0b1a15"
+  mint: "#cfe9dc"
+  mint-soft: "#e5f2eb"
 typography:
-  display:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(2.15rem, 5.5vw, 3.25rem)"
-    fontWeight: 600
-    lineHeight: 1.12
-    letterSpacing: "-0.03em"
-  headline:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "clamp(1.45rem, 2.8vw, 1.85rem)"
-    fontWeight: 600
-  title:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "1.2rem"
-    fontWeight: 600
-  body:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.65
-  brand:
-    fontFamily: "Epilogue, system-ui, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 600
-  body-lg:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "1.12rem"
-  label:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.8rem"
-    fontWeight: 700
-  ui:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.95rem"
-  fine:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.88rem"
-  meta:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.9rem"
-  footer:
-    fontFamily: "Atkinson Hyperlegible, system-ui, sans-serif"
-    fontSize: "0.92rem"
-rounded:
-  sm: "8px"
-  md: "16px"
-  pill: "999px"
-spacing:
-  sm: "8px"
-  md: "16px"
-  lg: "32px"
-  xl: "56px"
-components:
-  button-primary:
-    backgroundColor: "{colors.ink}"
-    textColor: "{colors.bg}"
-    rounded: "{rounded.pill}"
-    padding: "12px 18px"
-  button-ghost:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.pill}"
-    padding: "12px 18px"
+  display: '"Avenir Next", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif'
+  body: 'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+  mono: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
 ---
 
-# Design System: VocaHQ
+# VocaHQ design system
 
-## Overview
+## Direction
 
-**Creative North Star: "Quiet paper desk"**
+The VocaHQ homepage is a shared VocaPhone-style workbench at ecosystem scale:
+warm paper, deep green ink, editorial headings, flat surfaces, desktop-window
+chrome, small physical details, and direct copy. It should feel assembled by a
+careful person, not generated from a row of equal SaaS cards.
 
-A light, uncluttered marketing page. Warm paper ground, near-black type, generous space. Teal from the logo is the action color (primary buttons) and a soft signal for the hero level bars; links and stable status also use teal. Chrome brand marks use the shared org icon / circular logo assets under `assets/brand/`.
+The homepage represents the family rather than making VocaPhone the center.
+The first viewport names the family, explains on-device processing and the
+optional gateway, and routes visitors to their platform.
 
-**Key Characteristics:**
-- Light paper neutrals, not graphite-teal immersion
-- Type and spacing carry hierarchy
-- Simple list rows for apps (hairline dividers)
-- One soft decorative motion: hero level bars (respects reduced motion)
-- Primary CTAs in logo teal; secondary controls stay quiet
+## Tokens
 
-## Colors
+- Paper ground: `#f4f1e8`; alternate paper: `#ebe5d8`; bright surfaces:
+  `#fffdf7`.
+- Ink: `#14231c`; muted copy: `#58625c`; brand teal: `#0f6b57`; dark teal:
+  `#0b493d`.
+- Dark sections use `#0b1a15` with mint surfaces `#cfe9dc` and `#e5f2eb`.
+- Yellow, blue, red, and lilac are small physical details only: status dots,
+  window controls, stamps, and evidence that comes from a real product.
+- Headings use a system display stack. Body text uses a readable system stack.
+  There is no remote font dependency.
 
-Restrained palette. Neutrals do most of the work.
+## Composition rules
 
-### Primary
-- **Ink** (#1a1c1b): headings, primary buttons
-- **Accent teal** (#1f8f75): links, stable status, hover. Used sparingly
-
-### Neutral
-- **Paper** (#f7f6f3): page ground
-- **Soft paper** (#efeeea): alternate section band
-- **Muted / faint** (#5c6360 / #8a918d): secondary text
-- **Line** (#e2e0da): dividers
-
-**The Quiet Accent Rule.** Teal is for actions, links, and a single soft hero signal. No full-page glows, nested instrument panels, or purple SaaS gradients.
-
-## Typography
-
-**Display:** Epilogue (medium/semibold weights)
-**Body:** Atkinson Hyperlegible
-
-Calm scale. No oversized display drama. Sentence-case headings. No eyebrows/kickers.
-
-## Layout
-
-Narrow reading measure (~720–880px). Hero is stacked text only. Apps are a single-column list with thin rules. Principles in a simple two-column grid on wide screens. Lots of vertical air.
-
-## Elevation & Depth
-
-Flat. No heavy shadows. Sticky header uses a light blur only.
-
-## Shapes
-
-Small radius (8px) and pill buttons. No oversized instrument corners.
+- Use flat fills and the local paper-dot SVG. CSS gradients are prohibited.
+- Use normal document flow for story numbers, labels, headings, screenshots,
+  and decorative elements. No absolute-positioned label may cover a heading.
+- Prefer editorial rows, windows, folders, notes, and split paths to generic
+  equal-sized feature cards.
+- Product evidence is real and attributed. Code-native diagrams may explain a
+  flow, but they must not be presented as real app screenshots.
+- Keep the page inside a wide shell (`min(1180px, calc(100% - 2rem))`) and test
+  at 390px, 768px, 1440px, and a wide desktop viewport.
+- Motion is brief and optional. All moving elements stop under
+  `prefers-reduced-motion: reduce` and when the page is hidden.
 
 ## Components
 
-### Buttons
-- Primary: solid teal (`accent`) with on-accent text
-- Ghost: thin neutral border; teal on hover
+### Menu bar
 
-### App rows
-- Hairline list, platform label + status, name, blurb, text links
+Sticky paper header, shared Voca mark, compact status readout, text navigation,
+and one GitHub action. The mobile drawer is a real disclosure controlled by the
+menu button, closes on link selection or Escape, and returns focus to the
+button.
 
-### Navigation
-- Text links in muted ink; sticky paper bar
+### Window chrome
 
-## Do's and Don'ts
+Small red/yellow/green controls and mono labels create the desktop-workbench
+motif. They are decorative unless the window contains a real link or control.
 
-### Do:
-- **Do** let whitespace and type set the tone
-- **Do** use teal for primary CTAs and quiet status accents
-- **Do** preserve honest product status and human copy
+### Buttons and tags
 
-### Don't:
-- **Don't** rebuild a full graphite instrument desk
-- **Don't** use equal marketing icon-cards as the page structure
-- **Don't** lean on purple SaaS gradients or Inter defaults
-- **Don't** hard-code star counts that will rot
+Primary actions use brand teal with paper text. Secondary actions use a paper
+surface and ink border. Status labels are sentence case, short, and tied to the
+verified product matrix.
+
+### Story rows
+
+Each of the three numbered rows has an in-flow index, copy column, and visual
+column. At mobile widths the index, heading, paragraph, and visual stack in that
+order. The static test asserts that each row keeps its `data-flow-story`
+attribute and that CSS does not pull the index out of flow.
+
+### FAQ
+
+Native `<details>` and `<summary>` keep answers available without JavaScript.
+The small plus mark is `aria-hidden`; JavaScript closes other answers only as a
+convenience.
+
+## Content rules
+
+- Say “speech-to-text model,” not unexplained engine jargon.
+- Say “free and open source,” not “free forever.”
+- Scope “stays on your device” to on-device mode.
+- Say explicitly that configured gateway mode sends audio to the selected
+  self-hosted gateway and recommend a trusted LAN, encrypted private network,
+  or HTTPS.
+- Use each product's actual status and license; never imply VocaWin ships.

@@ -1,0 +1,8 @@
+{
+  "name": "vocahq-site-checks",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/site.test.mjs"
+  }
+}
