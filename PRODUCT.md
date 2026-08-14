@@ -42,12 +42,8 @@ source checkout.
 | [VocaLinux](https://vocalinux.com/) | Available now | Linux on X11 or Wayland; whisper.cpp, Whisper, or VOSK; current release `v0.15.0` | [Product site](https://vocalinux.com/) · [Source](https://github.com/VocaHQ/vocalinux) | AGPL-3.0 |
 | [VocaMac](https://vocamac.com/) | Beta | macOS 14+ on Apple Silicon; WhisperKit / Core ML; Homebrew or DMG | [Product site](https://vocamac.com/) · [Source](https://github.com/VocaHQ/vocamac) | AGPL-3.0 |
 | VocaWin | Coming soon | Windows-first Tauri foundation exists, but there is no public installer or release yet | [Status site](https://vocawin.com/) · [Source](https://github.com/VocaHQ/vocawin) | AGPL-3.0-or-later in the repository |
-| [VocaPhone](https://github.com/VocaHQ/vocaphone) | Android beta / iOS source build | Android 13+ public beta; iOS 17+ build from source with a Mac, Xcode, signing team, and physical iPhone; gateway optional | [Android releases](https://github.com/VocaHQ/vocaphone/releases) · [Source and iPhone guide](https://github.com/VocaHQ/vocaphone) | AGPL-3.0 |
+| [VocaPhone](https://vocaphone.vocahq.com) | Android beta / iOS source build | Android 13+ public beta; iOS 17+ build from source with a Mac, Xcode, signing team, and physical iPhone; gateway optional | [Product site](https://vocaphone.vocahq.com) · [Android releases](https://github.com/VocaHQ/vocaphone/releases) · [iPhone guide](https://vocaphone.vocahq.com/iphone/) · [Source](https://github.com/VocaHQ/vocaphone) | AGPL-3.0 |
 | [VocaGateway](https://github.com/VocaHQ/vocagateway) | Early | Self-host on macOS or Linux, or use Docker Compose on Linux `amd64`/`arm64`; authenticated WebUI and QR pairing | [Source and deployment guide](https://github.com/VocaHQ/vocagateway) | AGPL-3.0 |
-
-The planned `vocaphone.vocahq.com` product host was not resolving during this
-verification, so the public site uses the VocaPhone repository as its durable
-source action rather than shipping a broken website link.
 
 ## Two Processing Paths
 
