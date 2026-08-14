@@ -43,6 +43,8 @@ test("references only existing local assets", async () => {
   }
   assert.ok(cssAssetPaths.includes("assets/brand/paper-dots.svg"));
   assert.ok(rootAssetPaths.includes("favicon.ico"));
+  assert.ok(localAssetPaths.includes("assets/illustrations/contribute-flow.svg"));
+  assert.match(html, /contribute-flow\.svg/);
   assert.doesNotMatch(html, /Not a concept\. A workbench\./i);
   assert.doesNotMatch(html, /class="evidence-section"/i);
 });
