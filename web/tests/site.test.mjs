@@ -25,6 +25,7 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
   assert.match(html, /VocaWin[\s\S]{0,500}coming soon/i);
   assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
+  assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
@@ -43,7 +44,7 @@ test("keeps the hero platform map navigable", () => {
   assert.deepEqual(heroLinks, [
     "https://vocalinux.com/",
     "https://vocamac.com/",
-    "https://github.com/VocaHQ/vocaphone",
+    "https://vocaphone.vocahq.com",
     "https://vocawin.com/",
     "https://github.com/VocaHQ/vocagateway"
   ]);
