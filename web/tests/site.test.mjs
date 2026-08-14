@@ -48,6 +48,9 @@ test("keeps the hero platform map navigable", () => {
     "https://github.com/VocaHQ/vocagateway"
   ]);
   assert.equal((html.match(/class="board-link-arrow"/g) ?? []).length, 5);
+  assert.equal((html.match(/class="board-connector board-connector-/g) ?? []).length, 2);
+  assert.match(css, /\.board-connector-desktop\s*\{\s*display:\s*none/);
+  assert.match(css, /@media \(min-width:\s*800px\)[\s\S]*\.board-connector-mobile\s*\{\s*display:\s*none/);
   assert.doesNotMatch(html, /class="ecosystem-board"[^>]*role="img"/);
 });
 
@@ -104,5 +107,9 @@ test("keeps the contribution illustration stable and fully framed", () => {
   assert.match(contributionArt, /preserveAspectRatio="xMidYMid meet"/);
   assert.match(contributionArt, /style="overflow: visible"/);
   assert.doesNotMatch(contributionArt, /@keyframes float|class="float/);
+  assert.match(contributionArt, /<g transform="rotate\(4 515 126\)">[\s\S]*ready for review/);
+  assert.doesNotMatch(contributionArt, /<text[^>]+transform=[^>]*>ready for review/);
+  assert.doesNotMatch(contributionArt, /OPEN SOURCE/);
+  assert.match(html, /class="contribute-stamp"[\s\S]*BUILT IN PUBLIC/);
   assert.match(contributionArt, /ship the idea/);
 });
