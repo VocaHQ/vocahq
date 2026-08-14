@@ -38,6 +38,19 @@ test("keeps core metadata and schema aligned with the page", () => {
   assert.match(html, /hello@vocahq\.com/);
 });
 
+test("keeps the hero platform map navigable", () => {
+  const heroLinks = [...html.matchAll(/class="(?:board-window|board-gateway)[^"]*" href="([^"]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(heroLinks, [
+    "https://vocalinux.com/",
+    "https://vocamac.com/",
+    "https://github.com/VocaHQ/vocaphone",
+    "https://vocawin.com/",
+    "https://github.com/VocaHQ/vocagateway"
+  ]);
+  assert.equal((html.match(/class="board-link-arrow"/g) ?? []).length, 5);
+  assert.doesNotMatch(html, /class="ecosystem-board"[^>]*role="img"/);
+});
+
 test("references only existing local assets", async () => {
   for (const asset of [...rootAssetPaths, ...cssAssetPaths]) {
     await access(join(root, asset));
