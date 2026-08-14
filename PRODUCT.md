@@ -8,67 +8,88 @@ web
 
 ## Users
 
-Primary: people who type a lot on real desktops (Linux, macOS, Windows) and want voice dictation that stays on the machine. Developers, writers, accessibility users, privacy-conscious power users. Secondary: contributors evaluating the open-source projects; people on phone who want the same offline idea later.
+Primary: people who type a lot on real desktops and phones and want private
+speech-to-text that lands in the field they are already using. Secondary:
+contributors comparing the Voca projects and people who want to run a shared
+local gateway on hardware they control.
 
-Situation: mid-task in another app (editor, browser, chat, terminal). Job: get words into the focused field without leaving the machine or signing up for a cloud service.
+Situation: mid-task in another app (editor, browser, chat, terminal, or phone
+keyboard). Job: speak, get text into the focused field, and understand where
+the audio and speech-to-text model ran.
 
 ## Product Purpose
 
-VocaHQ is the shared home for the Voca family of apps: offline, open-source voice dictation across platforms. Hold a hotkey, speak, text appears at the cursor. Success means a visitor can name the platform they use, open the right project, and understand that audio stays local.
-
-This site (vocahq.com) explains the org, lists projects, states principles and plans, and routes people to product sites and GitHub.
+VocaHQ is the shared home for the Voca family: free, open-source speech-to-text
+apps for Linux, macOS, Windows, iPhone, and Android. The headquarters site
+explains the two supported paths, records honest project status, and routes
+people to the right product repository or official product site.
 
 ## Positioning
 
-Same privacy-first offline dictation idea on every platform you actually own, free and open source, with no accounts and no freemium trap. Differentiator is cross-platform parity under one org, not a single OS gadget.
+One privacy bar across the machines people already own. On-device processing
+is the default story; VocaGateway is an optional self-hosted path for shared or
+larger compute. VocaHQ does not require a Voca account, sell a hosted cloud, or
+claim that gateway mode is on-device.
 
-## Operating Context
+## Current Product Truth
 
-- Org: [github.com/VocaHQ](https://github.com/VocaHQ)
-- Domain: vocahq.com (GitHub Pages)
-- Contact: hello@vocahq.com
-- Sister product sites: vocalinux.com, vocamac.com, vocawin.com
-- Install paths live on product sites (Homebrew, curl installers, DMGs), not on this landing page
+Verified 2026-08-14 against the current public repositories, release metadata,
+official product sites where available, and the VocaPhone production website
+source checkout.
 
-## Capabilities and Constraints
+| Product | Status | Runs on / verified facts | Action | License |
+| --- | --- | --- | --- | --- |
+| [VocaLinux](https://vocalinux.com/) | Available now | Linux on X11 or Wayland; whisper.cpp, Whisper, or VOSK; current release `v0.15.0` | [Product site](https://vocalinux.com/) · [Source](https://github.com/VocaHQ/vocalinux) | AGPL-3.0 |
+| [VocaMac](https://vocamac.com/) | Beta | macOS 14+ on Apple Silicon; WhisperKit / Core ML; Homebrew or DMG | [Product site](https://vocamac.com/) · [Source](https://github.com/VocaHQ/vocamac) | AGPL-3.0 |
+| VocaWin | Coming soon | Windows-first Tauri foundation exists, but there is no public installer or release yet | [Status site](https://vocawin.com/) · [Source](https://github.com/VocaHQ/vocawin) | AGPL-3.0-or-later in the repository |
+| [VocaPhone](https://github.com/VocaHQ/vocaphone) | Android beta / iOS source build | Android 13+ public beta; iOS 17+ build from source with a Mac, Xcode, signing team, and physical iPhone; gateway optional | [Android releases](https://github.com/VocaHQ/vocaphone/releases) · [Source and iPhone guide](https://github.com/VocaHQ/vocaphone) | AGPL-3.0 |
+| [VocaGateway](https://github.com/VocaHQ/vocagateway) | Early | Self-host on macOS or Linux, or use Docker Compose on Linux `amd64`/`arm64`; authenticated WebUI and QR pairing | [Source and deployment guide](https://github.com/VocaHQ/vocagateway) | AGPL-3.0 |
 
-Projects (status from org profile):
+The planned `vocaphone.vocahq.com` product host was not resolving during this
+verification, so the public site uses the VocaPhone repository as its durable
+source action rather than shipping a broken website link.
 
-| Platform | Project | Status |
-| -------- | ------- | ------ |
-| Linux | VocaLinux | Stable (~724★) |
-| macOS | VocaMac | Beta (~75★) |
-| Windows | VocaWin | Coming soon |
-| iOS / Android | vocaphone | In development |
-| Gateway | vocagateway | Early (headless, set up once / run everywhere) |
+## Two Processing Paths
 
-Also: homebrew-vocamac tap. This repo is static landing + assets. Shipping product repos use AGPL-3.0; VocaWin is still pre-license "coming soon." No telemetry claims for local engines. Do not invent pricing, customers, benchmarks, or unreleased features.
+### On-device
 
-## Brand Commitments
+After a model is downloaded, supported on-device modes keep the speech-to-text
+model and audio processing on the phone or computer. A gateway is not required
+for this path.
 
-- Name: VocaHQ / Voca family (VocaLinux, VocaMac, VocaWin, VocaPhone, VocaGateway)
-- Logo: shared org brand under `web/assets/brand/` (square icon for chrome, circular logo for favicon). Pack includes light icon on teal (default), dark icon on teal (`*-dark`), monochrome mark, and white mark (`voca-mark-white.svg`) for theming. Other Voca repos should point here.
-- Voice of the org profile: plain, direct, slightly warm; "To infinity and beyond!"; "Building this for the last 15 months has been an absolute joy"
-- Free forever, offline/privacy first, open source
+### Optional VocaGateway
 
-## Evidence on Hand
-
-- Org profile README and repo descriptions
-- Product marketing sites for Linux/Mac/Win
-- Shared brand assets: `web/assets/brand/` (`voca-*` icons/logos/marks)
-- Platform icons: Simple Icons SVGs under `web/assets/icons/`
-- Public site: `web/` (GitHub Pages via Actions)
-- No other product brand packs or screenshots in-repo yet
-- Do not fabricate testimonials, star counts beyond known public numbers, or press quotes
+When someone deliberately configures VocaGateway, audio leaves the client and
+travels to the self-hosted machine they selected. The gateway runs a local
+speech engine and returns the transcript. Recommend a trusted LAN, an
+encrypted private network such as Tailscale, or HTTPS. Do not describe this
+path as on-device.
 
 ## Product Principles
 
-1. Offline by default; local engines process speech on-device
-2. Free and open source with no account wall
-3. System-wide: text lands where the cursor is, not only in one app
-4. Feature parity over time across platforms under one org
-5. Honest status labels (stable / beta / coming soon / early)
+1. On-device speech-to-text first.
+2. Free and open source, with the actual license named per project.
+3. Text lands where the user is already typing when the platform allows it.
+4. No required Voca account.
+5. Honest platform status and explicit network boundaries.
+6. Built in public, with contributions welcome.
 
-## Accessibility & Inclusion
+## Constraints
 
-Marketing site should meet sensible web a11y: keyboard nav, focus styles, contrast, skip link, reduced-motion respect. Product apps have their own a11y needs; this page is the entry point.
+- This repository is a static GitHub Pages site, not an installer.
+- Preserve `web/CNAME`, canonical metadata, robots, sitemap, Open Graph assets,
+  and the existing Pages deployment boundary.
+- Do not fabricate VocaWin screenshots, release assets, customer proof,
+  benchmarks, usage numbers, or feature parity.
+- Do not hard-code star counts or other fast-changing metrics.
+- Use “speech-to-text model” in visitor copy; engine names belong in concise
+  requirements or source links.
+- Keep the runtime dependency-free. Build checks may use Node's standard
+  library and optional local validators.
+
+## Accessibility
+
+The site must retain a skip link, landmarks, visible focus, keyboard navigation,
+Escape-to-close mobile navigation with focus return, reduced-motion handling,
+usable native FAQ disclosure without JavaScript, and no decorative control that
+pretends to be interactive.
