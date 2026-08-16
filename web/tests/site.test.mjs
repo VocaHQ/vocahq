@@ -25,6 +25,7 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
   assert.match(html, /VocaWin[\s\S]{0,500}coming soon/i);
   assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
+  assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/"[^>]*>Visit VocaPhone/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
 });
 
