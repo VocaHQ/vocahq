@@ -5,7 +5,7 @@ machines people already own.
 
 This repository holds:
 
-- **Public site** (`web/`) — [vocahq.com](https://vocahq.com)
+- **Public site** (`web/`): [vocahq.com](https://vocahq.com)
 - **Shared product truth** (`PRODUCT.md`) for the org and contributors
 - The GitHub Pages workflow and shared Voca brand assets
 

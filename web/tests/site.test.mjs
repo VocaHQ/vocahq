@@ -30,7 +30,8 @@ test("keeps the page's product promises scoped and current", () => {
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
-  assert.match(html, /<title>VocaHQ — private speech-to-text, across the machines you own<\/title>/);
+  assert.match(html, /<title>VocaHQ: private speech-to-text across the machines you own<\/title>/);
+  assert.doesNotMatch(html, /[—–]/);
   assert.match(html, /<link rel="canonical" href="https:\/\/vocahq\.com\/"/);
   assert.match(html, /property="og:url" content="https:\/\/vocahq\.com\/"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
