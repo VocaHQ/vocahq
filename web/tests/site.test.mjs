@@ -23,7 +23,11 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /trusted LAN|encrypted private network|HTTPS/i);
   assert.doesNotMatch(html, /free forever/i);
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
-  assert.match(html, /VocaWin[\s\S]{0,500}coming soon/i);
+  assert.match(html, /VocaWin[\s\S]{0,500}developer alpha/i);
+  assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
+  assert.doesNotMatch(html, /no public installer/i);
+  assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases"/);
   assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/"[^>]*>Visit VocaPhone/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
@@ -108,7 +112,7 @@ test("keeps the three numbered stories in normal flow", () => {
 test("keeps the visual and hosting boundaries explicit", () => {
   assert.doesNotMatch(css, /gradient/i);
   assert.doesNotMatch(html, /netlify|vercel|cloudflare pages/i);
-  assert.doesNotMatch(html, /github\.com\/VocaHQ\/vocawin[^<]{0,100}release/i);
+  assert.match(html, /github\.com\/VocaHQ\/vocawin\/releases/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*hidden/);
 });

@@ -33,7 +33,7 @@ claim that gateway mode is on-device.
 
 ## Current Product Truth
 
-Verified 2026-08-14 against the current public repositories, release metadata,
+Verified 2026-08-18 against the current public repositories, release metadata,
 official product sites where available, and the VocaPhone production website
 source checkout.
 
@@ -41,7 +41,7 @@ source checkout.
 | --- | --- | --- | --- | --- |
 | [VocaLinux](https://vocalinux.com/) | Available now | Linux on X11 or Wayland; whisper.cpp, Whisper, or VOSK; current release `v0.15.0` | [Product site](https://vocalinux.com/) · [Source](https://github.com/VocaHQ/vocalinux) | AGPL-3.0 |
 | [VocaMac](https://vocamac.com/) | Beta | macOS 14+ on Apple Silicon; WhisperKit / Core ML; Homebrew or DMG | [Product site](https://vocamac.com/) · [Source](https://github.com/VocaHQ/vocamac) | AGPL-3.0 |
-| VocaWin | Coming soon | Windows-first Tauri foundation exists, but there is no public installer or release yet | [Status site](https://vocawin.com/) · [Source](https://github.com/VocaHQ/vocawin) | AGPL-3.0-or-later in the repository |
+| [VocaWin](https://vocawin.com/) | Developer alpha | Unsigned NSIS (~12 MB) and MSI (~34 MB) on GitHub Releases; latest prerelease `v0.1.0-alpha.1`. SmartScreen / unknown-publisher is expected. Testers download, try, and file issues. | [Product site](https://vocawin.com/) · [Releases](https://github.com/VocaHQ/vocawin/releases) · [Source](https://github.com/VocaHQ/vocawin) | AGPL-3.0-or-later in the repository |
 | [VocaPhone](https://vocaphone.vocahq.com) | Android beta / iOS source build | Android 13+ public beta; iOS 17+ build from source with a Mac, Xcode, signing team, and physical iPhone; gateway optional | [Product site](https://vocaphone.vocahq.com) · [Android releases](https://github.com/VocaHQ/vocaphone/releases) · [iPhone guide](https://vocaphone.vocahq.com/iphone/) · [Source](https://github.com/VocaHQ/vocaphone) | AGPL-3.0 |
 | [VocaGateway](https://github.com/VocaHQ/vocagateway) | Early | Self-host on macOS or Linux, or use Docker Compose on Linux `amd64`/`arm64`; authenticated WebUI and QR pairing | [Source and deployment guide](https://github.com/VocaHQ/vocagateway) | AGPL-3.0 |
 
@@ -75,8 +75,8 @@ path as on-device.
 - This repository is a static GitHub Pages site, not an installer.
 - Preserve `web/CNAME`, canonical metadata, robots, sitemap, Open Graph assets,
   and the existing Pages deployment boundary.
-- Do not fabricate VocaWin screenshots, release assets, customer proof,
-  benchmarks, usage numbers, or feature parity.
+- Do not fabricate VocaWin screenshots, signed builds, Store listing,
+  customer proof, benchmarks, usage numbers, or feature parity.
 - Do not hard-code star counts or other fast-changing metrics.
 - Use “speech-to-text model” in visitor copy; engine names belong in concise
   requirements or source links.
