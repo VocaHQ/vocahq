@@ -27,10 +27,18 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/"[^>]*>Visit VocaPhone/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
+  assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway"[^>]*>source/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
-  assert.match(html, /<title>VocaHQ — private speech-to-text, across the machines you own<\/title>/);
+  assert.match(html, /<title>VocaHQ: private speech-to-text across the machines you own<\/title>/);
+  assert.match(html, /property="og:title" content="VocaHQ: private speech-to-text across the machines you own"/);
+  assert.match(html, /name="twitter:title" content="VocaHQ: private speech-to-text across the machines you own"/);
+  assert.match(html, /property="og:image:alt" content="VocaHQ: private speech-to-text across the machines you own"/);
+  assert.match(html, /name="twitter:image:alt" content="VocaHQ: private speech-to-text across the machines you own"/);
+  assert.doesNotMatch(html, /<title>[^<]*—/);
+  assert.match(html, /"name": "VocaGateway", "url": "https:\/\/vocagateway\.vocahq\.com\/"/);
   assert.match(html, /<link rel="canonical" href="https:\/\/vocahq\.com\/"/);
   assert.match(html, /property="og:url" content="https:\/\/vocahq\.com\/"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
@@ -47,7 +55,7 @@ test("keeps the hero platform map navigable", () => {
     "https://vocamac.com/",
     "https://vocaphone.vocahq.com",
     "https://vocawin.com/",
-    "https://github.com/VocaHQ/vocagateway"
+    "https://vocagateway.vocahq.com/"
   ]);
   assert.equal((html.match(/class="board-link-arrow"/g) ?? []).length, 5);
   assert.equal((html.match(/class="board-connector board-connector-/g) ?? []).length, 2);
