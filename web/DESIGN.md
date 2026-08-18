@@ -100,4 +100,5 @@ convenience.
 - Say explicitly that configured gateway mode sends audio to the selected
   self-hosted gateway and recommend a trusted LAN, encrypted private network,
   or HTTPS.
-- Use each product's actual status and license; never imply VocaWin ships.
+- Use each product's actual status and license; never imply VocaWin is a
+  signed shipping build.
