@@ -308,6 +308,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .product-card-gateway p { color: var(--mint); }
 .product-requirement { padding-top: 0.15rem; font-family: var(--mono); font-size: 0.6rem; line-height: 1.65; text-transform: uppercase; }
 .product-actions { display: flex; flex-wrap: wrap; gap: 0.8rem 1.1rem; align-items: center; margin-top: 1.5rem; }
+.button-store { gap: 0.45rem; }
+.button-store img { width: 1rem; height: 1rem; flex-shrink: 0; }
 .text-link { color: var(--teal); font-family: var(--mono); font-size: 0.68rem; text-transform: uppercase; text-underline-offset: 0.25em; }
 .product-card-gateway .text-link { color: var(--mint); }
 .product-window { display: none; overflow: hidden; border: 1px solid var(--line); border-radius: 0.5rem; background: var(--paper); }
