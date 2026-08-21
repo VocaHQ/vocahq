@@ -50,6 +50,8 @@ test("keeps core metadata and schema aligned with the page", () => {
   assert.match(html, /"@type": "Organization"/);
   assert.match(html, /"@type": "ItemList"/);
   assert.match(html, /hello@vocahq\.com/);
+  assert.match(html, /href="https:\/\/discord\.gg\/t6muquAJbm"/);
+  assert.match(html, /href="https:\/\/x\.com\/vocahq"/);
 });
 
 test("keeps the hero platform map navigable", () => {
