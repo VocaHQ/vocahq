@@ -7,16 +7,10 @@
 <style>
 :root {
   --paper: #f4f1e8;
-  --deep-paper: #ebe5d8;
-  --bright-paper: #fffdf7;
   --ink: #14231c;
   --muted: #58625c;
-  --line: #d5d0c4;
   --teal: #0f6b57;
-  --dark-teal: #0b493d;
   --mint: #cfe9dc;
-  --yellow: #e8c965;
-  --red: #e77b68;
   --display: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   --body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -40,7 +34,6 @@ body {
 }
 
 .frame {
-  position: relative;
   display: grid;
   grid-template-rows: 58px 1fr;
   width: 100%;
@@ -152,245 +145,15 @@ h1 em {
   content: "·";
 }
 
-.board {
-  position: relative;
+.ecosystem-art {
   width: 510px;
-  height: 464px;
-  overflow: hidden;
-  border: 2px solid var(--ink);
-  border-radius: 27px;
-  background: var(--deep-paper);
-  box-shadow: 11px 11px 0 var(--ink);
+  margin: 0;
 }
 
-.board-title,
-.board-foot {
-  position: absolute;
-  z-index: 5;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-}
-
-.board-title { top: 20px; left: 23px; }
-.board-foot { right: 22px; bottom: 17px; }
-
-.connections {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.connections path {
-  fill: none;
-  stroke: var(--teal);
-  stroke-dasharray: 7 8;
-  stroke-width: 2.5;
-  opacity: 0.72;
-}
-
-.connections circle {
-  fill: var(--paper);
-  stroke: var(--teal);
-  stroke-width: 2.5;
-}
-
-.window,
-.gateway {
-  position: absolute;
-  z-index: 3;
-  overflow: hidden;
-  border: 1.5px solid var(--ink);
-  border-radius: 9px;
-  background: var(--bright-paper);
-  box-shadow: 6px 6px 0 rgba(20, 35, 28, 0.16);
-}
-
-.linux {
-  top: 70px;
-  left: 28px;
-  width: 210px;
-  transform: rotate(-3deg);
-}
-
-.mac {
-  top: 82px;
-  right: 25px;
-  width: 208px;
-  transform: rotate(3deg);
-}
-
-.windows {
-  bottom: 38px;
-  left: 28px;
-  width: 205px;
-  transform: rotate(2deg);
-}
-
-.window-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  min-height: 31px;
-  padding: 7px 10px;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 10px;
-}
-
-.lights {
-  display: flex;
-  gap: 4px;
-}
-
-.lights i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--red);
-}
-
-.lights i:nth-child(2) { background: var(--yellow); }
-.lights i:nth-child(3) { background: var(--teal); }
-
-.window-body {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  min-height: 55px;
-  padding: 12px 14px;
-  font-family: var(--mono);
-  font-size: 13px;
-}
-
-.prompt {
-  color: var(--teal);
-  font-weight: 800;
-}
-
-.ready {
-  margin-left: auto;
-  color: var(--teal);
-  font-size: 9px;
-  font-weight: 800;
-}
-
-.phone {
-  position: absolute;
-  z-index: 4;
-  left: 50%;
-  bottom: 66px;
-  width: 112px;
-  height: 188px;
-  padding: 7px;
-  border-radius: 22px;
-  background: var(--ink);
-  box-shadow: 8px 8px 0 rgba(20, 35, 28, 0.18);
-  transform: translateX(-50%) rotate(-4deg);
-}
-
-.phone-screen {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  padding: 25px 12px 12px;
-  border-radius: 16px;
-  background: var(--bright-paper);
-}
-
-.phone-screen small {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 8px;
-}
-
-.phone-screen strong {
-  margin-top: 22px;
-  font-family: var(--display);
-  font-size: 20px;
-  letter-spacing: -0.05em;
-}
-
-.field {
-  margin-top: 13px;
-  padding: 10px 7px 22px;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 10px;
-  line-height: 1.25;
-}
-
-.phone-button {
-  margin-top: auto;
-  padding: 7px 5px;
-  border-radius: 99px;
-  color: var(--bright-paper);
-  background: var(--teal);
-  font-size: 8px;
-  font-weight: 800;
-  text-align: center;
-}
-
-.gateway {
-  right: 22px;
-  bottom: 43px;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 3px 8px;
-  width: 188px;
-  padding: 13px;
-  border-color: var(--teal);
-  border-radius: 6px;
-  color: var(--dark-teal);
-  background: var(--mint);
-  font-family: var(--mono);
-  transform: rotate(2deg);
-}
-
-.gateway-dot {
-  width: 12px;
-  height: 12px;
-  margin-top: 1px;
-  border-radius: 50%;
-  background: var(--teal);
-  box-shadow: 0 0 0 5px rgba(15, 107, 87, 0.15);
-}
-
-.gateway strong { font-size: 13px; }
-.gateway small { grid-column: 2; color: var(--muted); font-size: 10px; }
-
-.seal {
-  position: absolute;
-  z-index: 6;
-  top: 226px;
-  right: 28px;
-  display: grid;
-  place-content: center;
-  width: 78px;
-  height: 78px;
-  border: 2px solid var(--red);
-  border-radius: 50%;
-  color: var(--red);
-  background: rgba(244, 241, 232, 0.92);
-  box-shadow: inset 0 0 0 4px var(--paper), inset 0 0 0 5.5px var(--red);
-  font-family: var(--mono);
-  font-size: 9px;
-  font-weight: 900;
-  line-height: 1.08;
-  text-align: center;
-  transform: rotate(9deg);
-}
-
-.seal span {
+.ecosystem-art img {
   display: block;
-  margin-bottom: 3px;
-  font-size: 12px;
+  width: 100%;
+  height: auto;
 }
 </style>
 </head>
@@ -412,48 +175,9 @@ h1 em {
         <p class="promises"><span>on-device first</span><span>gateway optional</span><span>open source</span></p>
       </section>
 
-      <section class="board" aria-label="Voca ecosystem map">
-        <span class="board-title">VOCA / ECOSYSTEM.MAP</span>
-        <span class="board-foot">same promise · different surfaces</span>
-
-        <svg class="connections" viewBox="0 0 510 464" aria-hidden="true">
-          <path d="M135 162 C164 192 189 210 241 251" />
-          <path d="M393 172 C369 201 342 221 270 253" />
-          <path d="M134 375 C166 350 190 329 236 301" />
-          <path d="M378 357 C348 333 324 316 275 292" />
-          <circle cx="254" cy="272" r="7" />
-        </svg>
-
-        <div class="window linux">
-          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>linux / vocalinux</span></div>
-          <div class="window-body"><span class="prompt">$</span><span>dictate --local</span><span class="ready">READY</span></div>
-        </div>
-
-        <div class="window mac">
-          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>mac / vocamac</span></div>
-          <div class="window-body"><span class="prompt">⌁</span><span>hold right option</span></div>
-        </div>
-
-        <div class="phone">
-          <div class="phone-screen">
-            <small>9:41</small>
-            <strong>dictate</strong>
-            <span class="field">your words<br>land here<span class="prompt">│</span></span>
-            <span class="phone-button">start dictation</span>
-          </div>
-        </div>
-
-        <div class="window windows">
-          <div class="window-bar"><span class="lights"><i></i><i></i><i></i></span><span>windows / alpha</span></div>
-          <div class="window-body"><span class="prompt">›</span><span>unsigned build</span></div>
-        </div>
-
-        <div class="gateway">
-          <span class="gateway-dot"></span><strong>VocaGateway</strong><small>your hardware</small>
-        </div>
-
-        <div class="seal"><span>✦</span>OPEN SOURCE<br>BUILT IN PUBLIC</div>
-      </section>
+      <figure class="ecosystem-art">
+        <img src="../../illustrations/voca-ecosystem-map.png" width="1300" height="1209" alt="Voca ecosystem map connecting VocaPhone with VocaLinux, VocaMac, VocaWin, and VocaGateway.">
+      </figure>
     </div>
   </main>
 </body>

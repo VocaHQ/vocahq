@@ -8,6 +8,8 @@ const html = await readFile(join(root, "index.html"), "utf8");
 const css = await readFile(join(root, "styles.css"), "utf8");
 const script = await readFile(join(root, "script.js"), "utf8");
 const contributionArt = await readFile(join(root, "assets/illustrations/contribute-flow.svg"), "utf8");
+const ogSource = await readFile(join(root, "assets/og/src/og-default.html"), "utf8");
+const ogImage = await readFile(join(root, "assets/og/og-default.png"));
 
 const localAssetPaths = [...html.matchAll(/(?:src|href)="(assets\/[^"#?]+)"/g)].map((match) => match[1]);
 const rootAssetPaths = [...html.matchAll(/(?:src|href)="((?:assets\/|favicon\.ico)[^"#?]*)"/g)].map((match) => match[1]);
@@ -67,6 +69,13 @@ test("keeps the hero platform map navigable", () => {
   assert.equal((html.match(/class="ecosystem-hotspot ecosystem-hotspot-/g) ?? []).length, 5);
   assert.match(css, /\.ecosystem-map\s*\{[^}]*width:\s*100%[^}]*max-width:\s*100%[^}]*height:\s*auto/);
   assert.doesNotMatch(html, /class="ecosystem-board"[^>]*role="img"/);
+});
+
+test("keeps the social card aligned with the hero ecosystem map", () => {
+  assert.match(ogSource, /src="\.\.\/\.\.\/illustrations\/voca-ecosystem-map\.png"/);
+  assert.doesNotMatch(ogSource, /class="board"/);
+  assert.equal(ogImage.readUInt32BE(16), 1200);
+  assert.equal(ogImage.readUInt32BE(20), 630);
 });
 
 test("references only existing local assets", async () => {
