@@ -44,7 +44,7 @@
       }
     });
 
-    const desktopQuery = window.matchMedia("(min-width: 680px)");
+    const desktopQuery = window.matchMedia("(min-width: 1040px)");
     const closeOnDesktop = (event) => {
       if (!event.matches) return;
       const focusInside = mobileNav.contains(document.activeElement);

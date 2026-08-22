@@ -55,7 +55,7 @@ test("keeps core metadata and schema aligned with the page", () => {
 });
 
 test("keeps the hero platform map navigable", () => {
-  const heroLinks = [...html.matchAll(/class="(?:board-window|board-gateway)[^"]*" href="([^"]+)"/g)].map((match) => match[1]);
+  const heroLinks = [...html.matchAll(/class="ecosystem-hotspot[^"]*" href="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(heroLinks, [
     "https://vocalinux.com/",
     "https://vocamac.com/",
@@ -63,10 +63,9 @@ test("keeps the hero platform map navigable", () => {
     "https://vocawin.com/",
     "https://vocagateway.vocahq.com/"
   ]);
-  assert.equal((html.match(/class="board-link-arrow"/g) ?? []).length, 5);
-  assert.equal((html.match(/class="board-connector board-connector-/g) ?? []).length, 2);
-  assert.match(css, /\.board-connector-desktop\s*\{\s*display:\s*none/);
-  assert.match(css, /@media \(min-width:\s*800px\)[\s\S]*\.board-connector-mobile\s*\{\s*display:\s*none/);
+  assert.match(html, /<img class="ecosystem-map" src="assets\/illustrations\/voca-ecosystem-map\.png" width="1300" height="1209" alt="[^"]+"/);
+  assert.equal((html.match(/class="ecosystem-hotspot ecosystem-hotspot-/g) ?? []).length, 5);
+  assert.match(css, /\.ecosystem-map\s*\{[^}]*width:\s*100%[^}]*max-width:\s*100%[^}]*height:\s*auto/);
   assert.doesNotMatch(html, /class="ecosystem-board"[^>]*role="img"/);
 });
 
@@ -100,6 +99,8 @@ test("preserves accessible no-script fallbacks and behavior hooks", () => {
   assert.match(html, /data-mobile-nav/);
   assert.match(script, /Escape/);
   assert.match(script, /prefers-reduced-motion/);
+  assert.match(script, /matchMedia\("\(min-width: 1040px\)"\)/);
+  assert.match(css, /@media \(min-width: 1040px\)[\s\S]*\.desktop-nav\s*\{\s*display:\s*flex;\s*\}[\s\S]*\.nav-toggle, \.mobile-nav\s*\{\s*display:\s*none;\s*\}/);
   assert.match(script, /IntersectionObserver/);
   assert.match(script, /setTimeout\(\(\) => revealItems\.forEach\(reveal\), 800\)/);
 });
