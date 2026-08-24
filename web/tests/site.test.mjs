@@ -25,7 +25,10 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /trusted LAN|encrypted private network|HTTPS/i);
   assert.doesNotMatch(html, /free forever/i);
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
-  assert.match(html, /VocaWin[\s\S]{0,500}developer alpha/i);
+  assert.match(html, /<h3>VocaWin<\/h3><p>Unsigned Windows beta/);
+  assert.match(html, /unsigned Windows speech-to-text beta/i);
+  assert.doesNotMatch(html, /unsigned Windows alpha/i);
+  assert.doesNotMatch(html, /unsigned developer alpha/i);
   assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
   assert.doesNotMatch(html, /no public installer/i);
   assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);

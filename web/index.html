@@ -63,7 +63,7 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "VocaLinux", "url": "https://vocalinux.com/", "description": "Available Linux speech-to-text for X11 and Wayland." },
           { "@type": "ListItem", "position": 2, "name": "VocaMac", "url": "https://vocamac.com/", "description": "Beta macOS speech-to-text for Apple Silicon Macs." },
-          { "@type": "ListItem", "position": 3, "name": "VocaWin", "url": "https://vocawin.com/", "description": "Unsigned Windows speech-to-text developer alpha." },
+          { "@type": "ListItem", "position": 3, "name": "VocaWin", "url": "https://vocawin.com/", "description": "Unsigned Windows speech-to-text beta." },
           { "@type": "ListItem", "position": 4, "name": "VocaPhone", "url": "https://vocaphone.vocahq.com", "description": "Android beta and iOS TestFlight (or source-build) speech-to-text." },
           { "@type": "ListItem", "position": 5, "name": "VocaGateway", "url": "https://vocagateway.vocahq.com/", "description": "Early self-hosted gateway for shared local compute." }
         ]
@@ -217,8 +217,8 @@
           </article>
 
           <article class="product-card product-card-win reveal">
-            <div class="product-card-top"><span class="product-platform"><img src="assets/icons/windows.svg" alt="" width="22" height="22"> Windows</span><span class="status status-alpha"><i aria-hidden="true"></i> developer alpha</span></div>
-            <div class="product-card-body"><div><h3>VocaWin</h3><p>Unsigned Windows alpha on GitHub Releases. SmartScreen will warn because the publisher is not signed. Download it, try it, and file issues.</p><p class="product-requirement">unsigned NSIS or MSI · not a signed shipping build · license in repository</p><div class="product-actions"><a class="button button-dark" href="https://vocawin.com/" rel="noopener noreferrer">Visit VocaWin <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer">source</a><a class="text-link" href="https://github.com/VocaHQ/vocawin/releases" rel="noopener noreferrer">releases</a></div></div><div class="coming-note" aria-hidden="true"><span>unsigned<br>alpha</span></div></div>
+            <div class="product-card-top"><span class="product-platform"><img src="assets/icons/windows.svg" alt="" width="22" height="22"> Windows</span><span class="status status-beta"><i aria-hidden="true"></i> beta</span></div>
+            <div class="product-card-body"><div><h3>VocaWin</h3><p>Unsigned Windows beta on GitHub Releases. SmartScreen will warn because the publisher is not signed. Download it, try it, and file issues.</p><p class="product-requirement">unsigned NSIS or MSI · not a signed shipping build · license in repository</p><div class="product-actions"><a class="button button-dark" href="https://vocawin.com/" rel="noopener noreferrer">Visit VocaWin <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/VocaHQ/vocawin" rel="noopener noreferrer">source</a><a class="text-link" href="https://github.com/VocaHQ/vocawin/releases" rel="noopener noreferrer">releases</a></div></div><div class="coming-note" aria-hidden="true"><span>unsigned<br>beta</span></div></div>
           </article>
 
           <article class="product-card product-card-gateway reveal" id="gateway-card">
@@ -277,7 +277,7 @@
           <div class="status-row"><span class="status-row-label status-row-green"><i aria-hidden="true"></i> available now</span><strong>VocaLinux</strong><span>release path · Linux desktop</span><a href="https://vocalinux.com/" rel="noopener noreferrer" aria-label="Open VocaLinux">↗</a></div>
           <div class="status-row"><span class="status-row-label status-row-mint"><i aria-hidden="true"></i> beta</span><strong>VocaMac</strong><span>desktop beta · Apple Silicon</span><a href="https://vocamac.com/" rel="noopener noreferrer" aria-label="Open VocaMac">↗</a></div>
           <div class="status-row"><span class="status-row-label status-row-phone"><i aria-hidden="true"></i> beta / testflight</span><strong>VocaPhone</strong><span>Android beta · iOS TestFlight (1,000 seats)</span><a href="https://vocaphone.vocahq.com" rel="noopener noreferrer" aria-label="Open VocaPhone">↗</a></div>
-          <div class="status-row"><span class="status-row-label status-row-yellow"><i aria-hidden="true"></i> developer alpha</span><strong>VocaWin</strong><span>unsigned installer on GitHub Releases</span><a href="https://vocawin.com/" rel="noopener noreferrer" aria-label="Open VocaWin">↗</a></div>
+          <div class="status-row"><span class="status-row-label status-row-mint"><i aria-hidden="true"></i> beta</span><strong>VocaWin</strong><span>unsigned installer on GitHub Releases</span><a href="https://vocawin.com/" rel="noopener noreferrer" aria-label="Open VocaWin">↗</a></div>
           <div class="status-row"><span class="status-row-label status-row-blue"><i aria-hidden="true"></i> ecosystem work</span><strong>VocaGateway</strong><span>self-hosted shared compute and client integrations</span><a href="https://vocagateway.vocahq.com/" rel="noopener noreferrer" aria-label="Open VocaGateway">↗</a></div>
         </div>
       </div>
@@ -296,10 +296,10 @@
         <div class="faq-list">
           <details open><summary>Does my voice stay on my device?<span aria-hidden="true">＋</span></summary><p>In on-device mode, yes: after the model download, processing remains on the phone or computer. If you choose gateway mode, configured audio travels to your self-hosted VocaGateway instead.</p></details>
           <details><summary>Do I need VocaGateway?<span aria-hidden="true">＋</span></summary><p>No. The gateway is optional. Use it when you want shared hardware, larger models, or one local service for multiple clients.</p></details>
-          <details><summary>Which Voca app should I use?<span aria-hidden="true">＋</span></summary><p>Choose VocaLinux for Linux, VocaMac for an Apple Silicon Mac, VocaPhone for Android or iPhone via TestFlight, and VocaWin on Windows if you want to try the unsigned developer alpha.</p></details>
+          <details><summary>Which Voca app should I use?<span aria-hidden="true">＋</span></summary><p>Choose VocaLinux for Linux, VocaMac for an Apple Silicon Mac, VocaPhone for Android or iPhone via TestFlight, and VocaWin on Windows if you want to try the unsigned beta.</p></details>
           <details><summary>Does Voca work in every app?<span aria-hidden="true">＋</span></summary><p>The desktop apps are designed for system-wide text insertion, and the phone apps work through their keyboard or containing app flows. Secure fields, permissions, and platform rules can limit insertion.</p></details>
           <details><summary>Is Voca free and open source?<span aria-hidden="true">＋</span></summary><p>Yes, the Voca projects are free and open source. Licenses are named per project in the repository and in the product directory above.</p></details>
-          <details><summary>Which products can I install today?<span aria-hidden="true">＋</span></summary><p>VocaLinux has a current release, VocaMac has a beta release path, and VocaPhone has public Android beta releases plus a public iOS TestFlight beta capped at 1,000 seats, with a source-build path beyond that. VocaWin has an unsigned developer alpha, not a signed shipping build. VocaGateway is early self-hosted infrastructure.</p></details>
+          <details><summary>Which products can I install today?<span aria-hidden="true">＋</span></summary><p>VocaLinux has a current release, VocaMac has a beta release path, and VocaPhone has public Android beta releases plus a public iOS TestFlight beta capped at 1,000 seats, with a source-build path beyond that. VocaWin has an unsigned beta, not a signed shipping build. VocaGateway is early self-hosted infrastructure.</p></details>
           <details><summary>How can I contribute?<span aria-hidden="true">＋</span></summary><p>Join the <a href="https://discord.gg/t6muquAJbm" rel="noopener noreferrer">Discord</a>, read the project source, open an issue, improve documentation, or send a pull request through the <a href="https://github.com/VocaHQ" rel="noopener noreferrer">VocaHQ GitHub organization</a>.</p></details>
         </div>
       </div>
