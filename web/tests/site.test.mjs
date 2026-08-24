@@ -31,7 +31,7 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /unsigned Windows alpha/i);
   assert.doesNotMatch(html, /unsigned developer alpha/i);
   assert.doesNotMatch(html, /v0\.1\.0-alpha\.3/);
-  assert.doesNotMatch(html, /vocawin\/releases\/tag/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases\/tag\/v0\.1\.0-beta\.1"/);
   assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
   assert.doesNotMatch(html, /no public installer/i);
   assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);
