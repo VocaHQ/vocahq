@@ -27,12 +27,15 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
   assert.match(html, /<h3>VocaWin<\/h3><p>Unsigned Windows beta/);
   assert.match(html, /unsigned Windows speech-to-text beta/i);
+  assert.match(html, /latest tagged v0\.1\.0-beta\.1/);
   assert.doesNotMatch(html, /unsigned Windows alpha/i);
   assert.doesNotMatch(html, /unsigned developer alpha/i);
+  assert.doesNotMatch(html, /v0\.1\.0-alpha\.3/);
+  assert.doesNotMatch(html, /vocawin\/releases\/tag/);
   assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
   assert.doesNotMatch(html, /no public installer/i);
   assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);
-  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases"/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin"/);
   assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/"[^>]*>Visit VocaPhone/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
@@ -127,7 +130,7 @@ test("keeps the three numbered stories in normal flow", () => {
 test("keeps the visual and hosting boundaries explicit", () => {
   assert.doesNotMatch(css, /gradient/i);
   assert.doesNotMatch(html, /netlify|vercel|cloudflare pages/i);
-  assert.match(html, /github\.com\/VocaHQ\/vocawin\/releases/);
+  assert.match(html, /github\.com\/VocaHQ\/vocawin"/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /overflow-x:\s*hidden/);
 });
