@@ -36,7 +36,8 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /no public installer/i);
   assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin"/);
-  assert.match(html, /VocaPhone[\s\S]{0,900}(?:Android beta|iOS source)/i);
+  assert.match(html, /VocaPhone[\s\S]{0,900}iOS 17\+ TestFlight/);
+  assert.match(html, /testflight\.apple\.com\/join\/wd85wQ3W/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/"[^>]*>Visit VocaPhone/);
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
   assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
