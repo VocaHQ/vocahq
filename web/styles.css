@@ -277,7 +277,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .status { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; }
 .status i { display: inline-block; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
 .status-available { color: var(--teal); }.status-beta { color: #8a6d18; }.status-phone { color: #8569a5; }.status-soon, .status-alpha { color: #8b6d20; }.status-early { color: var(--mint); }
-.product-card-gateway .status { color: var(--mint); }
+.product-card-gateway .status-early { color: var(--mint); }.product-card-gateway .status-beta { color: var(--yellow); }
 .product-card-body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.75rem; align-items: center; padding-top: 1.5rem; }
 .product-card h3 { margin: 0; font-family: var(--display); font-size: clamp(1.8rem, 3.3vw, 3rem); font-weight: 760; letter-spacing: -0.06em; line-height: 1.06; }
 .product-card p { margin: 1.1rem 0 0; color: var(--muted); line-height: 1.65; }
