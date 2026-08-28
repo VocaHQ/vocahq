@@ -42,6 +42,13 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
   assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway"[^>]*>source/);
+  assert.match(html, /id="gateway-card"[\s\S]{0,500}status status-beta/);
+  assert.doesNotMatch(html, /id="gateway-card"[\s\S]{0,500}status-early/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway\/releases\/tag\/v0\.1\.0"/);
+  assert.match(html, /tagged try v0\.1\.0/);
+  assert.doesNotMatch(html, /Early self-hosted gateway/);
+  assert.match(html, /VocaGateway is beta self-hosted infrastructure/);
+  assert.match(html, /"description": "Beta self-hosted gateway for shared local compute\."/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
