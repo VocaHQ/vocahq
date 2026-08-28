@@ -42,6 +42,8 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
   assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway"[^>]*>source/);
+  assert.match(css, /\.product-card-gateway \.status-beta\s*\{[^}]*color:\s*var\(--yellow\)/);
+  assert.doesNotMatch(css, /\.product-card-gateway \.status\s*\{[^}]*color:\s*var\(--mint\)/);
   assert.match(html, /id="gateway-card"[\s\S]{0,500}status status-beta/);
   assert.doesNotMatch(html, /id="gateway-card"[\s\S]{0,500}status-early/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway\/releases\/tag\/v0\.1\.0"/);
