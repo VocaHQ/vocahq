@@ -50,7 +50,20 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /tagged try v0\.1\.0/);
   assert.doesNotMatch(html, /Early self-hosted gateway/);
   assert.match(html, /VocaGateway is beta self-hosted infrastructure/);
-  assert.match(html, /"description": "Beta self-hosted gateway for shared local compute\."/);
+  assert.match(html, /"description": "Beta self-hosted gateway for shared compute\."/);
+  assert.doesNotMatch(html, /shared local compute/);
+  assert.doesNotMatch(html, /ecosystem work/);
+  assert.doesNotMatch(html, /status-row-blue/);
+  assert.match(html, /status-row-mint[\s\S]{0,80}beta[\s\S]{0,40}VocaGateway/);
+  assert.doesNotMatch(html, /both are local infrastructure/);
+  assert.doesNotMatch(html, /two local paths/);
+  assert.doesNotMatch(html, /one local service/);
+  assert.doesNotMatch(html, /local mode/);
+  assert.match(html, /On-device speech-to-text is the primary path/);
+  assert.doesNotMatch(html, /offline where supported/);
+  assert.match(html, /on-device after the model is present/);
+  assert.doesNotMatch(html, /license in repository/);
+  assert.match(html, /unsigned NSIS or MSI · not a signed shipping build · AGPL-3\.0-or-later/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
