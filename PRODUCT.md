@@ -33,13 +33,13 @@ claim that gateway mode is on-device.
 
 ## Current Product Truth
 
-Verified 2026-08-27 against the current public repositories, release metadata,
+Verified 2026-08-30 against the current public repositories, release metadata,
 official product sites where available, and the VocaPhone production website
 source checkout.
 
 | Product | Status | Runs on / verified facts | Action | License |
 | --- | --- | --- | --- | --- |
-| [VocaLinux](https://vocalinux.com/) | Available now | Linux on X11 or Wayland; whisper.cpp, Whisper, or VOSK; current release `v0.16.0` | [Product site](https://vocalinux.com/) · [Source](https://github.com/VocaHQ/vocalinux) | AGPL-3.0 |
+| [VocaLinux](https://vocalinux.com/) | Available now | Linux on X11 or Wayland; whisper.cpp, Whisper, or VOSK; current release `v0.16.1` | [Product site](https://vocalinux.com/) · [Source](https://github.com/VocaHQ/vocalinux) | AGPL-3.0 |
 | [VocaMac](https://vocamac.com/) | Beta | macOS 14+ on Apple Silicon; WhisperKit / Core ML; Homebrew or DMG | [Product site](https://vocamac.com/) · [Source](https://github.com/VocaHQ/vocamac) | AGPL-3.0 |
 | [VocaWin](https://vocawin.com/) | Beta | Unsigned NSIS (~12 MB) and MSI (~34 MB); latest tagged `v0.1.0-beta.1`. SmartScreen / unknown-publisher is expected. Testers download, try, and file issues. | [Product site](https://vocawin.com/) · [Releases](https://github.com/VocaHQ/vocawin/releases/tag/v0.1.0-beta.1) · [Source](https://github.com/VocaHQ/vocawin) | AGPL-3.0-or-later in the repository |
 | [VocaPhone](https://vocaphone.vocahq.com) | Android beta / iOS TestFlight | Android 13+ public beta; iOS 17+ public TestFlight beta capped at 1,000 seats, or build from source with a Mac, Xcode, signing team, and physical iPhone; gateway optional | [Product site](https://vocaphone.vocahq.com) · [Android releases](https://github.com/VocaHQ/vocaphone/releases) · [TestFlight](https://testflight.apple.com/join/wd85wQ3W) · [iPhone guide](https://vocaphone.vocahq.com/iphone/) · [Source](https://github.com/VocaHQ/vocaphone) | AGPL-3.0 |
