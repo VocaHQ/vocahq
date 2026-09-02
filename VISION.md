@@ -25,12 +25,12 @@ Snippets expand as literals after styles, so a style cannot rewrite a snippet.
 
 ## Honesty over marketing
 
-Public status matches live artifacts: Available, Beta, Planned, unsigned.
+Public status labels live in PRODUCT.md and must match live artifacts.
 Copy does not say 100% offline, fully offline, or that data never leaves the device.
 The on-device tag is after the model is present, not a synonym for offline.
 Unsigned Windows stays unsigned until a real signed build exists.
 Numbers, Store listings, medical claims, and feature parity are not invented.
-PRODUCT.md is the family source of truth. Product READMEs and sites follow it.
+VISION.md is the acceptance policy. PRODUCT.md is the source of truth for status and licenses. Product READMEs and sites follow PRODUCT.md.
 
 ## Fail closed
 
@@ -42,7 +42,7 @@ MCP, when it exists, talks to the self-hosted gateway, not to on-device engines 
 
 ## Built in public
 
-Each shipping product names its license. The family default is AGPL-3.0.
+Each shipping product names its license in PRODUCT.md. The family default is AGPL-3.0.
 Work is built in public. Coding agents do not merge.
 A keep-no-records option is in the spirit of the project.
 
