@@ -30,7 +30,7 @@ Copy does not say 100% offline, fully offline, or that data never leaves the dev
 The on-device tag is after the model is present, not a synonym for offline.
 Unsigned Windows stays unsigned until a real signed build exists.
 Numbers, Store listings, medical claims, and feature parity are not invented.
-VISION.md is the acceptance policy. PRODUCT.md is the source of truth for status and licenses. Product READMEs and sites follow PRODUCT.md.
+VISION.md is the acceptance policy. PRODUCT.md is the source of truth for status and licenses. ENTERPRISE.md is the enterprise and monetization strategy. Product READMEs and sites follow PRODUCT.md.
 
 ## Fail closed
 
