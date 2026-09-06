@@ -27,11 +27,11 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
   assert.match(html, /<h3>VocaWin<\/h3><p>Unsigned Windows beta/);
   assert.match(html, /unsigned Windows speech-to-text beta/i);
-  assert.match(html, /latest tagged v0\.1\.0-beta\.1/);
+  assert.match(html, /latest tagged v0\.1\.1-beta/);
   assert.doesNotMatch(html, /unsigned Windows alpha/i);
   assert.doesNotMatch(html, /unsigned developer alpha/i);
   assert.doesNotMatch(html, /v0\.1\.0-alpha\.3/);
-  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases\/tag\/v0\.1\.0-beta\.1"/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases\/tag\/v0\.1\.1-beta"/);
   assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
   assert.doesNotMatch(html, /no public installer/i);
   assert.match(html, /href="https:\/\/vocawin\.com\/"[^>]*>Visit VocaWin/);
@@ -63,7 +63,7 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /offline where supported/);
   assert.match(html, /on-device after the model is present/);
   assert.doesNotMatch(html, /license in repository/);
-  assert.match(html, /unsigned NSIS or MSI · not a signed shipping build · AGPL-3\.0-or-later/);
+  assert.match(html, /unsigned NSIS · not a signed shipping build · AGPL-3\.0-or-later/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
