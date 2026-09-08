@@ -9,6 +9,11 @@ not an application, installer, or hosted Voca cloud.
 licenses, and processing paths. Do not invent features, user counts,
 benchmarks, signed Windows builds, Store listings, or a Voca-operated cloud.
 
+## Commit attribution
+
+Agents must not add themselves as commit co-authors or add `Co-authored-by`
+trailers for agents.
+
 ## Critical: git worktrees for every branch and PR
 
 Never create a branch, commit, or open a pull request in the primary checkout. Always use a linked git worktree so the main working tree stays on `main` and stays clean. Do not `git switch` / `git checkout` a feature branch in the primary directory, and do not leave it dirty.
