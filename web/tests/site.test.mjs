@@ -42,6 +42,15 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
   assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway"[^>]*>source/);
+  assert.match(html, /class="status status-phone"[^>]*>[\s\S]{0,80}Android beta \/ iOS TestFlight/);
+  assert.match(html, /class="status-row-label status-row-phone"[^>]*>[\s\S]{0,80}Android beta \/ iOS TestFlight/);
+  assert.doesNotMatch(html, /status status-phone[\s\S]{0,80}beta \/ testflight/i);
+  assert.doesNotMatch(html, /status-row-phone[\s\S]{0,80}beta \/ testflight/i);
+  assert.doesNotMatch(css, /#8569a5|#8a6d18|#8b6d20|#49876c/i);
+  assert.match(css, /\.status-beta\s*\{[^}]*color:\s*var\(--teal\)/);
+  assert.match(css, /\.status-phone\s*\{[^}]*color:\s*var\(--teal\)/);
+  assert.match(css, /\.status-row-phone\s*\{[^}]*color:\s*var\(--teal\)/);
+  assert.match(css, /\.status-row-mint\s*\{[^}]*color:\s*var\(--teal\)/);
   assert.match(css, /\.product-card-gateway \.status-beta\s*\{[^}]*color:\s*var\(--yellow\)/);
   assert.doesNotMatch(css, /\.product-card-gateway \.status\s*\{[^}]*color:\s*var\(--mint\)/);
   assert.match(html, /id="gateway-card"[\s\S]{0,500}status status-beta/);
