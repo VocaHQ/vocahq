@@ -73,6 +73,29 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /on-device after the model is present/);
   assert.doesNotMatch(html, /license in repository/);
   assert.match(html, /unsigned NSIS · not a signed shipping build · AGPL-3\.0-or-later/);
+  assert.match(html, /id="compare"/);
+  assert.match(html, /Voca is not trying to win a feature-count contest/);
+  assert.match(html, /<table class="comparison-table">/);
+  assert.match(html, /<section class="comparison-table-wrap" tabindex="0" aria-label="Competitor comparison table" aria-describedby="comparison-scroll-hint">/);
+  assert.match(html, /On smaller screens, scroll this comparison sideways/);
+  assert.match(html, /<th scope="col" class="comparison-voca-head">Voca<\/th>/);
+  assert.match(html, /<th scope="row">Privacy and processing path<\/th>/);
+  assert.match(html, /<th scope="row">Self-hosted compute<\/th>/);
+  assert.match(html, /free and open source/i);
+  assert.match(html, /No required Voca account/);
+  assert.match(html, /Optional VocaGateway/);
+  assert.match(html, /Wispr Flow, Aqua Voice, and Superwhisper/);
+  assert.match(html, /href="https:\/\/wisprflow\.ai\/"/);
+  assert.match(html, /2,000 words each week/);
+  assert.match(html, /Android is waitlist-only/);
+  assert.match(html, /No self-hosted gateway is described in the reviewed official/);
+  assert.match(html, /as of September 2026/);
+  assert.match(html, /href="https:\/\/aquavoice\.com\/info\/faq"/);
+  assert.match(html, /href="https:\/\/superwhisper\.com\/offline-transcription"/);
+  assert.match(html, /privacy, accuracy, or workflow quality has one universal winner/);
+  assert.match(css, /\.comparison-table-wrap \{ overflow-x: auto/);
+  assert.match(css, /\.comparison-table \{ width: 100%; min-width: 70rem/);
+  assert.match(css, /\.comparison-table-wrap:focus-visible/);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
