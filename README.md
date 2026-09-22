@@ -29,7 +29,7 @@ optional-gateway wording, in-page links, and responsive-story invariants.
 | Product | Status | Primary action |
 | --- | --- | --- |
 | [VocaLinux](https://vocalinux.com/) | Available now | [Product site](https://vocalinux.com/) |
-| [VocaMac](https://vocamac.com/) | Beta | [Product site](https://vocamac.com/) |
+| [VocaMac](https://vocamac.com/) | Available now | [Product site](https://vocamac.com/) |
 | [VocaWin](https://vocawin.com/) | Beta | latest tagged `v0.1.0-beta.1` · [Releases](https://github.com/VocaHQ/vocawin/releases/tag/v0.1.0-beta.1) · [Product site](https://vocawin.com/) |
 | [VocaPhone](https://vocaphone.vocahq.com) | Android beta / iOS TestFlight | [Product site](https://vocaphone.vocahq.com) · [TestFlight](https://testflight.apple.com/join/wd85wQ3W) |
 | [VocaGateway](https://vocagateway.vocahq.com/) | Beta | tagged try `v0.1.0` · [Releases](https://github.com/VocaHQ/vocagateway/releases/tag/v0.1.0) · [Product site](https://vocagateway.vocahq.com/) |
