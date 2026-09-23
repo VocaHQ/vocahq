@@ -68,6 +68,9 @@ test("keeps the page's product promises scoped and current", () => {
   assert.doesNotMatch(html, /two local paths/);
   assert.doesNotMatch(html, /one local service/);
   assert.doesNotMatch(html, /local mode/);
+  assert.match(html, /class="stamp">ON-DEVICE<br>FIRST<\/span>/);
+  assert.doesNotMatch(html, /LOCAL<br>FIRST/);
+  assert.doesNotMatch(html, /class="stamp">LOCAL/);
   assert.match(html, /On-device speech-to-text is the primary path/);
   assert.doesNotMatch(html, /offline where supported/);
   assert.match(html, /on-device after the model is present/);
