@@ -128,6 +128,11 @@ test("references only existing local assets", async () => {
   assert.doesNotMatch(html, /class="evidence-section"/i);
 });
 
+test("credits the ElevenLabs Grants program in the footer", () => {
+  assert.match(html, /class="shell footer-support"[\s\S]{0,80}Supported by[\s\S]{0,120}href="https:\/\/elevenlabs\.io\/startup-grants"[^>]*><img [^>]*alt="ElevenLabs Grants"/);
+  assert.doesNotMatch(html, /backed by elevenlabs/i);
+});
+
 test("has unique ids and resolvable in-page links", () => {
   assert.equal(new Set(ids).size, ids.length, "duplicate id found");
   for (const hash of internalHashes) {
