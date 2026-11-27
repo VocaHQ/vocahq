@@ -30,8 +30,13 @@ chrome, small physical details, and direct copy. It should feel assembled by a
 careful person, not generated from a row of equal SaaS cards.
 
 The homepage represents the family rather than making VocaPhone the center.
-The first viewport names the family, explains on-device processing and the
-optional gateway, and routes visitors to their platform.
+The first viewport names the family and shows the product working: a short
+animated illustration of someone speaking and text landing in the field.
+
+Show, don't tell. Prefer a short headline plus a visual over a paragraph.
+Each section gets one idea, a headline, at most one short line of copy, and a
+visual that demonstrates it. Product truth (status, license, requirements)
+stays in short mono requirement lines, never cut.
 
 ## Tokens
 
@@ -56,8 +61,13 @@ optional gateway, and routes visitors to their platform.
   flow, but they must not be presented as real app screenshots.
 - Keep the page inside a wide shell (`min(1180px, calc(100% - 2rem))`) and test
   at 390px, 768px, 1440px, and a wide desktop viewport.
-- Motion is brief and optional. All moving elements stop under
-  `prefers-reduced-motion: reduce` and when the page is hidden.
+- Motion explains the product and is always optional. Looping illustrations
+  only run while on screen, the hero has a visible Pause motion control that
+  freezes every animation on the page, and everything settles to a meaningful
+  static frame under `prefers-reduced-motion: reduce`. Base styles are the
+  final frame, so a reduced-motion visitor sees the finished state.
+- Animated demos are code-native illustrations. Label them as illustrations,
+  not screenshots.
 
 ## Components
 
@@ -85,6 +95,19 @@ Each of the three numbered rows has an in-flow index, copy column, and visual
 column. At mobile widths the index, heading, paragraph, and visual stack in that
 order. The static test asserts that each row keeps its `data-flow-story`
 attribute and that CSS does not pull the index out of flow.
+
+### Hero demo
+
+A tabbed stage (Mac, Linux, Windows, Phone) with a floating Voca pill that
+walks through ready, listening, transcribing, and text inserted. Tabs are real
+buttons with `aria-pressed`; the stage is `role="img"` with a label that
+describes the current scene. The controls only appear once JavaScript runs.
+
+### Privacy paths
+
+A two-button switch between "On this device" and "Your VocaGateway" drives a
+code-native diagram and one caption panel. Without JavaScript both captions
+show. The gateway caption always says gateway mode is not on-device.
 
 ### FAQ
 

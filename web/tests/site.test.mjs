@@ -22,14 +22,14 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /on-device/i);
   assert.match(html, /gateway.*optional|optional.*gateway/i);
   assert.match(html, /audio leaves the client|audio.*gateway/i);
+  assert.match(html, /Gateway mode is not on-device/);
   assert.match(html, /trusted LAN|encrypted private network|HTTPS/i);
   assert.doesNotMatch(html, /free forever/i);
   assert.doesNotMatch(html, /audio stays on your device(?![\s\S]{0,120}(?:on-device|gateway))/i);
-  assert.match(html, /<h3>VocaWin<\/h3><p>Unsigned Windows beta/);
-  assert.match(html, /unsigned Windows speech-to-text beta/i);
+  assert.match(html, /<h3>VocaWin<\/h3>[\s\S]{0,200}Unsigned Windows beta/);
   assert.match(html, /latest tagged v0\.1\.1-beta/);
-  assert.doesNotMatch(html, /unsigned Windows alpha/i);
-  assert.doesNotMatch(html, /unsigned developer alpha/i);
+  assert.match(html, /unsigned NSIS · not a signed shipping build · AGPL-3\.0-or-later/);
+  assert.doesNotMatch(html, /unsigned (?:Windows|developer) alpha/i);
   assert.doesNotMatch(html, /v0\.1\.0-alpha\.3/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocawin\/releases\/tag\/v0\.1\.1-beta"/);
   assert.doesNotMatch(html, /VocaWin[\s\S]{0,400}coming soon/i);
@@ -42,37 +42,33 @@ test("keeps the page's product promises scoped and current", () => {
   assert.match(html, /href="https:\/\/vocaphone\.vocahq\.com\/iphone\/"[^>]*>iPhone guide/);
   assert.match(html, /href="https:\/\/vocagateway\.vocahq\.com\/"[^>]*>Visit VocaGateway/);
   assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway"[^>]*>source/);
+  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway\/releases\/tag\/v0\.1\.0"/);
+  assert.match(html, /tagged try v0\.1\.0/);
+  assert.match(html, /id="gateway-card"[\s\S]{0,500}status status-beta/);
   assert.match(html, /class="status status-phone"[^>]*>[\s\S]{0,80}Android beta \/ iOS TestFlight/);
-  assert.match(html, /class="status-row-label status-row-phone"[^>]*>[\s\S]{0,80}Android beta \/ iOS TestFlight/);
   assert.doesNotMatch(html, /status status-phone[\s\S]{0,80}beta \/ testflight/i);
-  assert.doesNotMatch(html, /status-row-phone[\s\S]{0,80}beta \/ testflight/i);
+  assert.match(html, /"description": "Beta self-hosted gateway for shared compute\."/);
+  assert.match(html, /on-device after the model is present/);
+  assert.match(html, /no Voca account/i);
+  assert.doesNotMatch(html, /local mode|two local paths|one local service|offline where supported/);
   assert.doesNotMatch(css, /#8569a5|#8a6d18|#8b6d20|#49876c/i);
   assert.match(css, /\.status-beta\s*\{[^}]*color:\s*var\(--teal\)/);
   assert.match(css, /\.status-phone\s*\{[^}]*color:\s*var\(--teal\)/);
-  assert.match(css, /\.status-row-phone\s*\{[^}]*color:\s*var\(--teal\)/);
-  assert.match(css, /\.status-row-mint\s*\{[^}]*color:\s*var\(--teal\)/);
-  assert.match(css, /\.product-card-gateway \.status-beta\s*\{[^}]*color:\s*var\(--yellow\)/);
-  assert.doesNotMatch(css, /\.product-card-gateway \.status\s*\{[^}]*color:\s*var\(--mint\)/);
-  assert.match(html, /id="gateway-card"[\s\S]{0,500}status status-beta/);
-  assert.doesNotMatch(html, /id="gateway-card"[\s\S]{0,500}status-early/);
-  assert.match(html, /href="https:\/\/github\.com\/VocaHQ\/vocagateway\/releases\/tag\/v0\.1\.0"/);
-  assert.match(html, /tagged try v0\.1\.0/);
-  assert.doesNotMatch(html, /Early self-hosted gateway/);
-  assert.match(html, /VocaGateway is beta self-hosted infrastructure/);
-  assert.match(html, /"description": "Beta self-hosted gateway for shared compute\."/);
-  assert.doesNotMatch(html, /shared local compute/);
-  assert.doesNotMatch(html, /ecosystem work/);
-  assert.doesNotMatch(html, /status-row-blue/);
-  assert.match(html, /status-row-mint[\s\S]{0,80}beta[\s\S]{0,40}VocaGateway/);
-  assert.doesNotMatch(html, /both are local infrastructure/);
-  assert.doesNotMatch(html, /two local paths/);
-  assert.doesNotMatch(html, /one local service/);
-  assert.doesNotMatch(html, /local mode/);
-  assert.match(html, /On-device speech-to-text is the primary path/);
-  assert.doesNotMatch(html, /offline where supported/);
-  assert.match(html, /on-device after the model is present/);
-  assert.doesNotMatch(html, /license in repository/);
-  assert.match(html, /unsigned NSIS · not a signed shipping build · AGPL-3\.0-or-later/);
+  assert.match(css, /\.product-tile-gateway \.status-beta\s*\{[^}]*color:\s*var\(--yellow\)/);
+});
+
+test("labels the animated demos as illustrations and keeps them accessible", () => {
+  assert.match(html, /data-demo-stage[^>]*role="img"[^>]*aria-label="Animated illustration/);
+  assert.match(html, /Animated illustration, not a screenshot\./);
+  assert.equal((html.match(/data-demo-tab="/g) ?? []).length, 4);
+  assert.match(html, /data-motion-toggle/);
+  assert.match(script, /motion-paused/);
+  assert.match(css, /\.motion-paused \*[^{]*\{[^}]*animation-play-state:\s*paused/);
+  assert.match(css, /\.js-ready \.demo-controls\s*\{/);
+  assert.match(css, /\.js-ready \.path-toggle\s*\{/);
+  assert.equal((html.match(/data-path-panel="/g) ?? []).length, 2);
+  assert.match(html, /data-path-diagram[^>]*aria-hidden="true"/);
+  assert.match(script, /panel\.hidden = /);
 });
 
 test("keeps core metadata and schema aligned with the page", () => {
@@ -94,7 +90,7 @@ test("keeps core metadata and schema aligned with the page", () => {
   assert.match(html, /href="https:\/\/x\.com\/vocahq"/);
 });
 
-test("keeps the hero platform map navigable", () => {
+test("keeps the platform map navigable", () => {
   const heroLinks = [...html.matchAll(/class="ecosystem-hotspot[^"]*" href="([^"]+)"/g)].map((match) => match[1]);
   assert.deepEqual(heroLinks, [
     "https://vocalinux.com/",
@@ -109,7 +105,7 @@ test("keeps the hero platform map navigable", () => {
   assert.doesNotMatch(html, /class="ecosystem-board"[^>]*role="img"/);
 });
 
-test("keeps the social card aligned with the hero ecosystem map", () => {
+test("keeps the social card aligned with the ecosystem map", () => {
   assert.match(ogSource, /src="\.\.\/\.\.\/illustrations\/voca-ecosystem-map\.png"/);
   assert.doesNotMatch(ogSource, /class="board"/);
   assert.equal(ogImage.readUInt32BE(16), 1200);
