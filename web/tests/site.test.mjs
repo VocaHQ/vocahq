@@ -132,7 +132,7 @@ test("credits the grant programs in their own section", () => {
   assert.match(html, /<section class="supporters-section" id="supporters" aria-labelledby="supporters-title">/);
   assert.match(html, /id="supporters-title">Supported by</);
   assert.match(html, /href="https:\/\/elevenlabs\.io\/startup-grants"[^>]*>[\s\S]{0,240}alt="ElevenLabs Grants"/);
-  assert.match(html, /src="assets\/partners\/anthropic-wordmark\.svg"[^>]*alt="Anthropic"[\s\S]{0,120}Claude Startups/);
+  assert.match(html, /href="https:\/\/claude\.com\/programs\/startups"[^>]*>[\s\S]{0,120}src="assets\/partners\/anthropic-wordmark\.svg"[^>]*alt="Anthropic"[\s\S]{0,120}Claude Startups/);
   assert.doesNotMatch(html, /footer-support/);
   assert.doesNotMatch(html, /backed by (?:elevenlabs|anthropic|claude)/i);
 });
