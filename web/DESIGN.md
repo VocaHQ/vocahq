@@ -109,6 +109,16 @@ A two-button switch between "On this device" and "Your VocaGateway" drives a
 code-native diagram and one caption panel. Without JavaScript both captions
 show. The gateway caption always says gateway mode is not on-device.
 
+### Built-in dictation comparison
+
+Four rows compare built-in dictation with Voca: where it works, where audio is
+processed, the speech-to-text model, and the code. Built-in cells are dashed
+and muted; Voca cells fill with mint as each row scrolls in. Claims about
+Apple, Google or Microsoft dictation stay general (no "cloud" or "offline"
+claims either way), and a note says built-in dictation varies by device, OS
+version and language. Column headers are decorative; each cell carries its
+own label for screen readers.
+
 ### FAQ
 
 Native `<details>` and `<summary>` keep answers available without JavaScript.

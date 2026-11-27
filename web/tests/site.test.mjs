@@ -71,6 +71,20 @@ test("labels the animated demos as illustrations and keeps them accessible", () 
   assert.match(script, /panel\.hidden = /);
 });
 
+test("compares Voca with built-in dictation fairly", () => {
+  const vs = html.match(/<section class="section vs-section" id="vs-built-in"[\s\S]*?<\/section>/)?.[0] ?? "";
+  assert.ok(vs, "missing built-in dictation comparison");
+  assert.ok(html.indexOf('id="vs-built-in"') > html.indexOf('id="how-it-works"'));
+  assert.ok(html.indexOf('id="vs-built-in"') < html.indexOf('id="privacy"'));
+  assert.equal((vs.match(/<li class="vs-row/g) ?? []).length, 4);
+  assert.equal((vs.match(/class="vs-label">Built-in</g) ?? []).length, 4);
+  assert.equal((vs.match(/class="vs-label">Voca</g) ?? []).length, 4);
+  assert.match(vs, /VocaGateway you host/);
+  assert.match(vs, /varies by device, OS version and language/);
+  assert.match(vs, /class="vs-heads" aria-hidden="true"/);
+  assert.doesNotMatch(vs, /offline|never leaves|sends? (?:your )?(?:audio|voice) to|cloud/i);
+});
+
 test("keeps core metadata and schema aligned with the page", () => {
   assert.match(html, /<title>VocaHQ: private speech-to-text across the machines you own<\/title>/);
   assert.match(html, /property="og:title" content="VocaHQ: private speech-to-text across the machines you own"/);

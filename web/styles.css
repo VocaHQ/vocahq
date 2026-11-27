@@ -308,6 +308,39 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .type-text { display: inline-block; width: 33ch; overflow: hidden; white-space: nowrap; animation: type-in 4.8s steps(33, end) infinite; }
 .visual-status { display: flex; align-items: center; gap: 0.55rem; padding-top: 0.8rem; color: var(--teal); font-family: var(--mono); font-size: 0.58rem; text-transform: uppercase; }
 
+.vs-section { border-top: 1px solid var(--line); background: var(--paper) url("assets/brand/paper-dots.svg") repeat; }
+.vs-board { overflow: hidden; border: 1px solid var(--ink); border-radius: var(--radius-lg); background: var(--bright-paper); box-shadow: 0.55rem 0.55rem 0 var(--ink); }
+.vs-heads { display: none; }
+.vs-head { display: inline-flex; align-items: center; gap: 0.55rem; }
+.vs-head-them { color: var(--muted); }
+.vs-head-voca { color: var(--teal); }
+.vs-mic { display: grid; place-items: center; width: 1.7rem; height: 1.7rem; border: 1px dashed var(--faint); border-radius: 50%; color: var(--muted); }
+.vs-pill-mini { display: inline-flex; align-items: center; gap: 2px; height: 1.7rem; padding: 0 0.55rem; border-radius: 999px; background: var(--teal); }
+.vs-pill-mini i { width: 3px; height: 0.85rem; border-radius: 2px; background: var(--mint); animation: wave 0.9s ease-in-out infinite alternate; }
+.vs-pill-mini i:nth-child(2) { animation-delay: -0.3s; }
+.vs-pill-mini i:nth-child(3) { animation-delay: -0.6s; }
+.vs-list { margin: 0; padding: 0; list-style: none; }
+.vs-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0.7rem; padding: 1.4rem 1.2rem; border-top: 1px solid var(--line); }
+.vs-row:first-child { border-top: 0; }
+.vs-row h3 { margin: 0; font-family: var(--display); font-size: 1.3rem; font-weight: 760; letter-spacing: -0.04em; line-height: 1.15; }
+.vs-cell { position: relative; isolation: isolate; margin: 0; padding: 0.85rem 0.95rem; overflow: hidden; border-radius: var(--radius-sm); font-size: 0.92rem; line-height: 1.45; }
+.vs-them { border: 1px dashed var(--line); color: var(--muted); background: var(--paper); }
+.vs-voca { border: 1px solid var(--teal); color: var(--ink); background: var(--mint-soft); }
+.vs-voca::before { position: absolute; inset: 0; z-index: -1; content: ""; background: var(--mint); transform-origin: left center; transition: transform 700ms var(--ease) 250ms; }
+.js-ready .vs-row:not(.is-visible) .vs-voca::before { transform: scaleX(0); }
+.vs-label { display: block; margin-bottom: 0.35rem; font-family: var(--mono); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.vs-them .vs-label { color: var(--faint); }
+.vs-voca .vs-label { color: var(--teal); }
+.vs-dots { display: flex; gap: 0.3rem; margin-bottom: 0.55rem; }
+.vs-dots i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--teal); animation: pop 2.6s var(--ease) infinite alternate; }
+.vs-dots i:nth-child(2) { animation-delay: 0.2s; }
+.vs-dots i:nth-child(3) { animation-delay: 0.4s; }
+.vs-dots i:nth-child(4) { animation-delay: 0.6s; }
+.vs-dots i:nth-child(5) { animation-delay: 0.8s; }
+.vs-switch { position: relative; display: block; width: 2.6rem; height: 1.2rem; margin-bottom: 0.55rem; border: 1.5px solid var(--teal); border-radius: 999px; }
+.vs-switch i { position: absolute; top: 0.15rem; left: 0.15rem; width: 0.75rem; height: 0.75rem; border-radius: 50%; background: var(--teal); animation: vs-flip 3.2s var(--ease) infinite; }
+.vs-glyph { display: block; margin-bottom: 0.45rem; color: var(--teal); font-family: var(--mono); font-size: 0.85rem; font-weight: 700; }
+.vs-note { margin: 0; padding: 0.9rem 1.2rem; border-top: 1px solid var(--line); color: var(--faint); background: var(--paper); font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.04em; line-height: 1.6; text-transform: uppercase; }
 .privacy-section { padding: clamp(5rem, 9vw, 8rem) 0; color: var(--bright-paper); background: var(--dark-ink); }
 .paths { display: grid; gap: 1.4rem; }
 .path-toggle { display: none; }
@@ -426,6 +459,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @keyframes dot-y-back { 0% { top: 100%; opacity: 0; } 15%, 85% { opacity: 1; } 100% { top: 0; opacity: 0; } }
 @keyframes pop { 0%, 55% { opacity: 0.2; transform: scale(0.85); } 75%, 100% { opacity: 1; transform: none; } }
 @keyframes bob { from { transform: translateY(0.18rem); } to { transform: translateY(-0.18rem); } }
+@keyframes vs-flip { 0%, 40% { transform: none; } 50%, 90% { transform: translateX(1.35rem); } 100% { transform: none; } }
 @keyframes status-pulse { 0% { box-shadow: 0 0 0 0 rgba(15, 107, 87, 0.45); } 70%, 100% { box-shadow: 0 0 0 0.45rem rgba(15, 107, 87, 0); } }
 
 @media (max-width: 479px) {
@@ -441,6 +475,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .principles-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .principles-grid li { padding: 1.5rem; }
   .path-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vs-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .vs-row h3 { grid-column: 1 / -1; }
   .js-ready .path-panels { grid-template-columns: minmax(0, 1fr); }
   .footer-grid { grid-template-columns: repeat(3, 1fr); }
   .footer-group:last-child { grid-column: auto; }
@@ -460,6 +496,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .path-diagram[data-path="gateway"] .pd-dot-back { animation-name: dot-x-back; }
   .contribute-layout { grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: clamp(2rem, 4vw, 5rem); }
   .contribute-art { min-height: 24rem; }
+  .vs-heads { display: grid; grid-template-columns: minmax(11rem, 0.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; padding: 1rem 1.6rem; border-bottom: 1px solid var(--ink); background: var(--paper); font-family: var(--mono); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .vs-row { grid-template-columns: minmax(11rem, 0.8fr) minmax(0, 1fr) minmax(0, 1fr); gap: 1rem; align-items: stretch; padding: 1.2rem 1.6rem; }
+  .vs-row h3 { grid-column: auto; align-self: center; }
+  .vs-label { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
   .faq-layout { grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); align-items: start; }
 }
 
